@@ -1,28 +1,29 @@
 //
-//  bitpay_client.m
-//  bitpay_client
+//  bitpay_ios_client.m
 //
-//  Created by chrisk on 4/7/15.
-//  Copyright (c) 2015 bitpay. All rights reserved.
+//  Created by Chris Kleeschulte on 4/7/15.
+//  Copyright (c) 2015 BitPay. All rights reserved.
 //
 
 #import "bitpay_ios_client.h"
 
 @implementation BitPayIosClient
 
-static const UInt8 publicKeyIdentifier[] = "com.bitpay.ios.publickey\0";
-static const UInt8 privateKeyIdentifier[] = "com.bitpay.ios.privatekey\0";
 
 + (NSString *)generatePem {
+
     EC_KEY *eckey;
     BIO *out = NULL;
+    BUF_MEM *buf;
+    
     eckey = [self createNewKey];
     out = BIO_new(BIO_s_mem());
-    int i = PEM_write_bio_ECPrivateKey(out, eckey, NULL, NULL, 0, NULL, NULL);
-    BUF_MEM *buf;
+    PEM_write_bio_ECPrivateKey(out, eckey, NULL, NULL, 0, NULL, NULL);
+    
     BIO_get_mem_ptr(out, &buf);
     
     NSString *pem = [NSString stringWithCString:buf->data encoding:NSASCIIStringEncoding];
+    
     EC_KEY_free(eckey);
     BIO_free(out);
     
@@ -31,176 +32,202 @@ static const UInt8 privateKeyIdentifier[] = "com.bitpay.ios.privatekey\0";
 
 
 
-+ (NSString *)getPublicKeyFromPem:(NSString *)pem {
++ (NSString *)getPublicKeyFromPem: (NSString *)pem {
+    
     EC_KEY *eckey = NULL;
+    EC_KEY *key = NULL;
     EC_POINT *pub_key = NULL;
+    BIO *in = NULL;
     const EC_GROUP *group = NULL;
+    const char *cPem = NULL;
+    char *hexPoint = NULL;
+    
     BIGNUM start;
     const BIGNUM *res;
     BN_CTX *ctx;
     
     BN_init(&start);
-    ctx = BN_CTX_new(); // ctx is an optional buffer to save time from allocating and deallocating memory whenever required
+    ctx = BN_CTX_new();
     
     res = &start;
     
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //get the private key from the pem
-    
-    const char *ptr = [pem cStringUsingEncoding:NSASCIIStringEncoding];
-    BIO *in = BIO_new(BIO_s_mem());
-    BIO_puts(in, ptr);
-    EC_KEY *key = PEM_read_bio_ECPrivateKey(in, NULL, NULL, NULL);
+    cPem = [pem cStringUsingEncoding:NSASCIIStringEncoding];
+    in = BIO_new(BIO_s_mem());
+    BIO_puts(in, cPem);
+    key = PEM_read_bio_ECPrivateKey(in, NULL, NULL, NULL);
     res = EC_KEY_get0_private_key(key);
     
-    //end getting the private key from the pem
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    //build up the group
     eckey = EC_KEY_new_by_curve_name(NID_secp256k1);
     group = EC_KEY_get0_group(eckey);
     pub_key = EC_POINT_new(group);
-    
-    //set the private key in eckey
+
     EC_KEY_set_private_key(eckey, res);
     
+    if (!EC_POINT_mul(group, pub_key, res, NULL, NULL, ctx)) {
+        raise(-1);
+    }
+
+    EC_KEY_set_public_key(eckey, pub_key); //1 on success
     
-    //error checking
-    /* pub_key is a new uninitialized `EC_POINT*`.  priv_key res is a `BIGNUM*`. */
-    if (!EC_POINT_mul(group, pub_key, res, NULL, NULL, ctx))
-        printf("Error at EC_POINT_mul.\n");
-    //end error checking
+    hexPoint = EC_POINT_point2hex(group, pub_key, 4, ctx);
     
-    
-    int resultSetPubKey = EC_KEY_set_public_key(eckey, pub_key); //1 on success
-    
-    //cc should be the pub key in hex
-    char *cc = EC_POINT_point2hex(group, pub_key, 4, ctx);
-    
-    NSString *pubKeyString = [NSString stringWithCString:cc encoding:NSASCIIStringEncoding];
+    NSString *pubKeyString = [NSString stringWithCString:hexPoint encoding:NSASCIIStringEncoding];
     pubKeyString = [self compressKey: pubKeyString];
 
     BN_CTX_free(ctx);
-    free(cc);
+    free(hexPoint);
 
     return pubKeyString;
     
 }
 
-+ (NSString *)generateSinFromPem:(NSString *)pem {
-    NSString *pubKeyString;
-    pubKeyString = [self getPublicKeyFromPem: pem];
++ (NSString *)getPrivateKeyFromPem: (NSString *)pem {
     
+    EC_KEY *key = NULL;
+    BIO *in = NULL;
+    const char *cPem = NULL;
+    
+    BIGNUM start;
+    const BIGNUM *res;
+    BN_CTX *ctx;
+    
+    BN_init(&start);
+    ctx = BN_CTX_new();
+    
+    res = &start;
+    
+    cPem = [pem cStringUsingEncoding:NSASCIIStringEncoding];
+    in = BIO_new(BIO_s_mem());
+    BIO_puts(in, cPem);
+    key = PEM_read_bio_ECPrivateKey(in, NULL, NULL, NULL);
+    res = EC_KEY_get0_private_key(key);
+    char *out = BN_bn2hex(res);
+
+    NSString *privKeyString = [NSString stringWithCString:out encoding:NSASCIIStringEncoding];
+    
+    BN_CTX_free(ctx);
+    free(out);
+    
+    return privKeyString;
+
+}
+
++ (NSString *)generateSinFromPem: (NSString *)pem {
+
+    NSString *pubKeyString = [self getPublicKeyFromPem: pem];
     NSString *sha256Hex = [self hexOfsha256: pubKeyString];
     NSString *ripe160Hex = [self hexOfRipe160: sha256Hex];
 
-    NSString *prefix = @"0F02";
+    NSString *prefix = @"0f02";
     NSString *versionType = [prefix stringByAppendingString:ripe160Hex];
     
     NSString *shaOnce = [self hexOfsha256:versionType];
     NSString *shaTwice = [self hexOfsha256:shaOnce];
     NSString *checkSum = [shaTwice substringToIndex:8];
     NSString *versionCheck = [versionType stringByAppendingString:checkSum];
+    return [self encodeBase58: versionCheck];
 
-    
-    
-    //base58 the versionCheck
-    int i = 0;
-    
-    
-    //    key = OpenSSL::PKey::EC.new pem
-    //    key.public_key.group.point_conversion_form = :compressed
-    //    public_key = key.public_key.to_bn.to_s(2)
-    //    step_one = Digest::SHA256.hexdigest(public_key)
-    //    step_two = Digest::RMD160.hexdigest([step_one].pack("H*"))
-    //    step_three = "0F02" + step_two
-    //    step_four_a = Digest::SHA256.hexdigest([step_three].pack("H*"))
-    //    step_four = Digest::SHA256.hexdigest([step_four_a].pack("H*"))
-    //    step_five = step_four[0..7]
-    //    step_six = step_three + step_five
-    //    encode_base58(step_six)
-    return @"its the end of the world as we know it";
 };
 
-+ (void)sign:(NSString *)message withPem: (NSString *)pem {
-    //    group = ECDSA::Group::Secp256k1
-    //    digest = Digest::SHA256.digest(message)
-    //    signature = nil
-    //    while signature.nil?
-    //        temp_key = 1 + SecureRandom.random_number(group.order - 1)
-    //        signature = ECDSA.sign(group, privkey.to_i(16), digest, temp_key)
-    //        return ECDSA::Format::SignatureDerString.encode(signature).unpack("H*").first
-    //        end
++ (NSString *)sign:(NSString *)message withPem: (NSString *)pem {
+
+    const unsigned char *buf = (const unsigned char *)strdup([message cStringUsingEncoding: NSASCIIStringEncoding]);
+    
+    unsigned char result[SHA256_DIGEST_LENGTH];
+    SHA256_CTX sha256;
+    SHA256_Init(&sha256);
+    SHA256_Update(&sha256, buf, [message length]);
+    SHA256_Final(result, &sha256);
+    NSData *messageHash = [[NSData alloc] initWithBytes:result length:SHA256_DIGEST_LENGTH];
+
+    const char *charList = (const char *)[messageHash bytes];
+    
+    EC_KEY *key = NULL;
+    BIO *in = NULL;
+    const char *cPem = NULL;
+    unsigned char *buffer = NULL;
+    
+    BIGNUM start;
+    const BIGNUM *res;
+    BN_CTX *ctx;
+    
+    BN_init(&start);
+    ctx = BN_CTX_new();
+    
+    res = &start;
+    
+    cPem = [pem cStringUsingEncoding:NSASCIIStringEncoding];
+    in = BIO_new(BIO_s_mem());
+    BIO_puts(in, cPem);
+    key = PEM_read_bio_ECPrivateKey(in, NULL, NULL, NULL);
+    
+    ECDSA_SIG *sig = ECDSA_do_sign((const unsigned char*)charList, SHA256_DIGEST_LENGTH, key);
+    
+    int verify = ECDSA_do_verify((const unsigned char*)charList, SHA256_DIGEST_LENGTH, sig, key);
+    
+    if(verify != 1) {
+        raise(-1);
+    }
+
+    int buflen = ECDSA_size(key);
+    buffer = OPENSSL_malloc(buflen);
+
+    int derSigLen = i2d_ECDSA_SIG(sig, &buffer);
+
+    NSData *hexData = [[NSData alloc] initWithBytes:(buffer-derSigLen) length:derSigLen];
+
+    NSString *hexString = [self toHexString: hexData WithLength: derSigLen];
+    
+    EC_KEY_free(key);
+    BN_CTX_free(ctx);
+    return hexString;
     
 };
 
-+ (NSString *) compressKey: (NSString *)key {
-    NSString *xval, *yval;
++ (NSString *)compressKey: (NSString *)key {
+    
     unsigned int yint;
-    NSRange xRange = NSMakeRange(2, 64);
-    xval = [key substringWithRange:xRange];
-    yval = [key substringFromIndex:125];
+    NSString *xval = [key substringWithRange:NSMakeRange(2, 64)];
+    NSString *yval = [key substringFromIndex:125];
     NSScanner *scanner = [NSScanner scannerWithString:yval];
     [scanner scanHexInt:&yint];
-    NSString *resultString;
-    if ((yint % 2) == 0) {
-        resultString = @"02";
-    } else {
-        resultString = @"03";
-    }
-    return [resultString stringByAppendingString:xval];
+    NSString *prefix = ((yint % 2) == 0) ? @"02" : @"03";
+    
+    return [prefix stringByAppendingString:xval];
+    
 }
 
 + (EC_KEY *)createNewKey {
-    
-    EC_KEY *eckey;
-    eckey = EC_KEY_new();
-    int asn1_flag = OPENSSL_EC_NAMED_CURVE;
+
+    int asn1Flag = OPENSSL_EC_NAMED_CURVE;
     int form = POINT_CONVERSION_UNCOMPRESSED;
-    EC_GROUP *group = EC_GROUP_new_by_curve_name(NID_secp256k1);
-    EC_GROUP_set_asn1_flag(group, asn1_flag);
+    EC_KEY *eckey = NULL;
+    EC_GROUP *group = NULL;
+
+    eckey = EC_KEY_new();
+    group = EC_GROUP_new_by_curve_name(NID_secp256k1);
+    EC_GROUP_set_asn1_flag(group, asn1Flag);
     EC_GROUP_set_point_conversion_form(group, form);
     EC_KEY_set_group(eckey, group);
+    
     int resultFromKeyGen = EC_KEY_generate_key(eckey);
     if (resultFromKeyGen != 1){
-        raise(1);
+        raise(-1);
     }
     return eckey;
 }
 
-+ (void)encodeBase58:(NSString *) data {
-    //    code_string = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
-    //    base = 58
-    //    x = data.hex
-    //    output_string = ""
-    //
-    //    while x > 0 do
-    //        remainder = x % base
-    //        x = x / base
-    //        output_string << code_string[remainder]
-    //        end
-    //
-    //        pos = 0
-    //        while data[pos,2] == "00" do
-    //            output_string << code_string[0]
-    //            pos += 2
-    //            end
-    //
-    //            output_string.reverse()
-    //            end
-    //
-};
-
 + (NSData *)createDataWithHexString: (NSString *)inputString {
-    NSUInteger inLength = [inputString length];
+
+    NSInteger i, o = 0;
+    UInt8 outByte = 0;
     
+    NSUInteger inLength = [inputString length];
     unichar *inCharacters = alloca(sizeof(unichar) * inLength);
     [inputString getCharacters:inCharacters range:NSMakeRange(0, inLength)];
     
     UInt8 *outBytes = malloc(sizeof(UInt8) * ((inLength / 2) + 1));
     
-    NSInteger i, o = 0;
-    UInt8 outByte = 0;
     for (i = 0; i < inLength; i++) {
         UInt8 c = inCharacters[i];
         SInt8 value = -1;
@@ -224,16 +251,11 @@ static const UInt8 privateKeyIdentifier[] = "com.bitpay.ios.privatekey\0";
     
     return [[NSData alloc] initWithBytesNoCopy:outBytes length:o freeWhenDone:YES];
 }
-  // string DigestMethod string {
-  // createData...
-  // digest data
-  // hexData(appropriateLength)
-  // return the hexdata
 
-+ (NSString *)hexOfsha256: (NSString *) pubKey{
++ (NSString *)hexOfsha256: (NSString *) input{
 
-    NSData *data = [self createDataWithHexString:pubKey];
-    uint8_t buf[33];
+    NSData *data = [self createDataWithHexString:input];
+    uint8_t buf[[input length]];
     [data getBytes:buf length:[data length]];
 
     unsigned char result[SHA256_DIGEST_LENGTH];
@@ -242,10 +264,12 @@ static const UInt8 privateKeyIdentifier[] = "com.bitpay.ios.privatekey\0";
     SHA256_Update(&sha256, buf, [data length]);
     SHA256_Final(result, &sha256);
     NSData *hexData = [[NSData alloc] initWithBytes:result length:SHA256_DIGEST_LENGTH];
-    return [self hexItUp: hexData WithLength: SHA256_DIGEST_LENGTH];
+    return [self toHexString: hexData WithLength: SHA256_DIGEST_LENGTH];
+    
 }
 
-+ (NSString *)hexOfRipe160: (NSString *) input {
++ (NSString *)hexOfRipe160: (NSString *)input {
+    
     NSData *data = [self createDataWithHexString:input];
     uint8_t buf[[input length]];
     [data getBytes:buf length:[data length]];
@@ -257,11 +281,11 @@ static const UInt8 privateKeyIdentifier[] = "com.bitpay.ios.privatekey\0";
     RIPEMD160_Final(ripResult, &ripe160);
     
     NSData *hexData = [[NSData alloc] initWithBytes:ripResult length:RIPEMD160_DIGEST_LENGTH];
-    return [self hexItUp: hexData WithLength: RIPEMD160_DIGEST_LENGTH];
+    return [self toHexString: hexData WithLength: RIPEMD160_DIGEST_LENGTH];
 }
 
 
-+ (NSString *)hexItUp: (NSData *)input WithLength: (int)length {
++ (NSString *)toHexString: (NSData *)input WithLength: (int)length {
     
     uint8_t *byteData = (uint8_t*)malloc(length);
     memcpy(byteData, [input bytes], length);
@@ -274,5 +298,27 @@ static const UInt8 privateKeyIdentifier[] = "com.bitpay.ios.privatekey\0";
     return [outStrg copy];
 }
 
+
++ (NSString *)encodeBase58: (NSString *)string {
+
+    BIGNUM *res = BN_new();
+    const char *charList = [string UTF8String];
+    BN_hex2bn(&res, charList);
+    NSString *codeString = @"123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+    
+    NSMutableString *buildString = [NSMutableString string];
+   
+    while(BN_is_zero(res) != 1){
+        
+        int rem = BN_mod_word(res, 58);
+        NSString *currentChar = [codeString substringWithRange:NSMakeRange(rem, 1)];
+        [buildString insertString:currentChar atIndex:0];
+        BN_div_word(res, 58);
+        
+    }
+
+    return buildString;
+    
+}
 
 @end

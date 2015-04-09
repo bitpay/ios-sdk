@@ -1,9 +1,8 @@
 //
-//  bitpay_client.h
-//  bitpay_client
+//  bitpay_ios_client.h
 //
 //  Created by Chris Kleeschulte on 4/7/15.
-//  Copyright (c) 2015 bitpay. All rights reserved.
+//  Copyright (c) 2015 BitPay. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,9 +16,9 @@
 @interface BitPayIosClient : NSObject
 
 + (NSString *)generatePem;
-+ (NSString *)getPrivateKey: (NSString *)key;
 + (NSString *)getPublicKeyFromPem:(NSString *)pem;
++ (NSString *)getPrivateKeyFromPem:(NSString *)pem;
 + (NSString *)generateSinFromPem:(NSString *)pem;
-+ (void)sign:(NSString *)message withPem:(NSString *)key;
++ (NSString *)sign:(NSString *)message withPem:(NSString *)key;
 
 @end

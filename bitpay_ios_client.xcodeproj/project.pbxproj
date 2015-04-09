@@ -10,7 +10,7 @@
 		97D48A241AD57DB600B0ACB7 /* bitpay_ios_client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 97D48A231AD57DB600B0ACB7 /* bitpay_ios_client.h */; };
 		97D48A261AD57DB600B0ACB7 /* bitpay_ios_client.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D48A251AD57DB600B0ACB7 /* bitpay_ios_client.m */; };
 		97D48A2C1AD57DB600B0ACB7 /* libbitpay_ios_client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A201AD57DB600B0ACB7 /* libbitpay_ios_client.a */; };
-		97D48A3B1AD57E0F00B0ACB7 /* BitPayIosClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D48A3A1AD57E0F00B0ACB7 /* BitPayIosClient.m */; };
+		97D48A3B1AD57E0F00B0ACB7 /* BitPayIosClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D48A3A1AD57E0F00B0ACB7 /* BitPayIosClientTests.m */; };
 		97D48A3D1AD57F7100B0ACB7 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A3C1AD57F7100B0ACB7 /* openssl.framework */; };
 		97D48A3E1AD57F7100B0ACB7 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A3C1AD57F7100B0ACB7 /* openssl.framework */; };
 /* End PBXBuildFile section */
@@ -44,7 +44,7 @@
 		97D48A251AD57DB600B0ACB7 /* bitpay_ios_client.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bitpay_ios_client.m; sourceTree = "<group>"; };
 		97D48A2B1AD57DB600B0ACB7 /* bitpay_ios_clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bitpay_ios_clientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D48A311AD57DB600B0ACB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97D48A3A1AD57E0F00B0ACB7 /* BitPayIosClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitPayIosClient.m; sourceTree = "<group>"; };
+		97D48A3A1AD57E0F00B0ACB7 /* BitPayIosClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitPayIosClientTests.m; sourceTree = "<group>"; };
 		97D48A3C1AD57F7100B0ACB7 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = openssl.framework; path = bitpay_ios_client/openssl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				97D48A301AD57DB600B0ACB7 /* Supporting Files */,
-				97D48A3A1AD57E0F00B0ACB7 /* BitPayIosClient.m */,
+				97D48A3A1AD57E0F00B0ACB7 /* BitPayIosClientTests.m */,
 			);
 			path = bitpay_ios_clientTests;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D48A3B1AD57E0F00B0ACB7 /* BitPayIosClient.m in Sources */,
+				97D48A3B1AD57E0F00B0ACB7 /* BitPayIosClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +384,7 @@
 				97D48A361AD57DB600B0ACB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97D48A371AD57DB600B0ACB7 /* Build configuration list for PBXNativeTarget "bitpay_ios_clientTests" */ = {
 			isa = XCConfigurationList;
@@ -392,6 +393,7 @@
 				97D48A391AD57DB600B0ACB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
