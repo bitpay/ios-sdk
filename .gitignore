@@ -1,7 +1,7 @@
 bin
 lib
 *.gz
-bitpay_ios_client.xcodeproj/xcuserdata
+ios-sdk.xcodeproj/xcuserdata
 src
 build
-bitpay_ios_client.xcodeproj/project.xcworkspace/xcuserdata
+ios-sdk.xcodeproj/project.xcworkspace/xcuserdata
