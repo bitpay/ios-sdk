@@ -1,5 +1,5 @@
 //
-//  bitpay_ios_client.h
+//  ios-sdk.h
 //
 //  Created by Chris Kleeschulte on 4/7/15.
 //  Copyright (c) 2015 BitPay. All rights reserved.
@@ -13,7 +13,7 @@
 #import <openssl/pem.h>
 
 
-@interface BitPayIosClient : NSObject
+@interface IosSDK : NSObject
 
 + (NSString *)generatePem;
 + (NSString *)getPublicKeyFromPem:(NSString *)pem;

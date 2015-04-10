@@ -11,22 +11,14 @@ API Documentation is available on the [BitPay site](https://bitpay.com/api).
 
 Before running the behavior tests, you will need a test.bitpay.com account and you will need to set the local constants. 
 
-To set constants:
-    > source tasks/set_constants.sh "https://test.bitpay.com" your@email yourpassword
-
 To run unit tests:
-    > TODO
+    > Open Xcode -> key commands are: Command + u 
 
-To run behavior tests:
-    > TODO 
-    
 ## Found a bug?
 Let us know! Send a pull request or a patch. Questions? Ask! We're here to help. We will respond to all filed issues.
 
 **BitPay Support:**
 
-* [BitPay Labs](https://labs.bitpay.com/c/libraries/ios)
-  * Post a question in our discussion forums
 * [GitHub Issues](https://github.com/bitpay/bitpay-ios/issues)
   * Open an issue if you are having issues with this library
 * [Support](https://support.bitpay.com)
