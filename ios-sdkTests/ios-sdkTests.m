@@ -58,12 +58,14 @@
 }
 
 - (void)testGetPrivateKey {
+    
     NSString *key = [IosSDK getPrivateKeyFromPem: @"-----BEGIN EC PRIVATE KEY-----\nMHQCAQEEIKy0/RaYLTD3isDivZUuqPNNsDnbqAMRrneqlq839nbloAcGBSuBBAAK\noUQDQgAEECPSfkDyOnrniCcXdMHILAHKVM/V08Out87Rx66pvIK+oB90k5DPvr6l\n3tVKTyBA97qTU1tN5nl7RXe8Eseb7g==\n-----END EC PRIVATE KEY-----\n"];
     XCTAssertEqualObjects(@"ACB4FD16982D30F78AC0E2BD952EA8F34DB039DBA80311AE77AA96AF37F676E5", key);
+    
 }
 
 
-- (void)testSignPerformance {
+- (void)testOverallPerformance {
     
     [self measureBlock:^{
         [self testGeneratePem];
@@ -73,5 +75,7 @@
         [self testGetPrivateKey];
     }];
 }
+
+
 
 @end
