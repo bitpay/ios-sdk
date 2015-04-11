@@ -1,3 +1,4 @@
+.DS_Store
 bin
 lib
 *.gz
@@ -5,3 +6,4 @@ ios-sdk.xcodeproj/xcuserdata
 src
 build
 ios-sdk.xcodeproj/project.xcworkspace/xcuserdata
+ios-sdk.xcworkspace/xcuserdata

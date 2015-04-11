@@ -6,6 +6,12 @@
 //
 
 #import "ios-sdk.h"
+#import <openssl/sha.h>
+#import <openssl/ripemd.h>
+#import <openssl/ecdsa.h>
+#import <openssl/ec.h>
+#import <openssl/pem.h>
+
 
 @implementation IosSDK
 
@@ -16,13 +22,16 @@
     BIO *out = NULL;
     BUF_MEM *buf;
     
+    buf = BUF_MEM_new();
     eckey = [self createNewKey];
     out = BIO_new(BIO_s_mem());
     PEM_write_bio_ECPrivateKey(out, eckey, NULL, NULL, 0, NULL, NULL);
     
     BIO_get_mem_ptr(out, &buf);
     
-    NSString *pem = [NSString stringWithCString:buf->data encoding:NSASCIIStringEncoding];
+    NSString  *pem = [[NSString alloc] initWithBytes:buf->data
+                                              length:(NSUInteger)buf->length
+                                            encoding:NSASCIIStringEncoding];
     
     EC_KEY_free(eckey);
     BIO_free(out);
@@ -67,7 +76,7 @@
         raise(-1);
     }
 
-    EC_KEY_set_public_key(eckey, pub_key); //1 on success
+    EC_KEY_set_public_key(eckey, pub_key);
     
     hexPoint = EC_POINT_point2hex(group, pub_key, 4, ctx);
     
