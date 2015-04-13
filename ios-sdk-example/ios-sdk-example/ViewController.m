@@ -77,7 +77,7 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
     
     NSString *postString = [NSString stringWithFormat:@"{\"currency\":\"USD\",\"price\":20,\"token\":\"%@\"}", _token];
     
-    NSString *message = [NSString stringWithFormat: @"https://test.bitpay.com/invoices%@", postString];
+    NSString *message = [NSString stringWithFormat: @"%@/invoices%@", bitpayUrl, postString];
     
     _signedMessage = [KeyUtils sign:message withPem:_key];
     
