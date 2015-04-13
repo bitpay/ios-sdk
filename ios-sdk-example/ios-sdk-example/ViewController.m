@@ -12,11 +12,15 @@
 @property (readonly) NSString *key;
 @property (readonly) NSString *sin;
 @property (readonly) NSString *token;
+@property (readonly) NSString *signedMessage;
 @property (readonly) NSString *invoice;
 @property (nonatomic, strong) NSMutableData *responseData;
 @end
 
 @implementation ViewController
+
+NSString *genericErrorMessage = @"There was an error from the api";
+NSString const *bitpayUrl = @"https://test.bitpay.com";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,6 +33,7 @@
 - (IBAction)generateKeys:(id)sender {
     _key = [IosSDK generatePem];
     _keyText.text = _key;
+    NSLog(@"pem key: %@", _key);
 }
 
 - (IBAction)generateSin:(id)sender {
@@ -37,6 +42,7 @@
     } else {
         _sin = [IosSDK generateSinFromPem:_key];
         _sinText.text = _sin;
+        NSLog(@"sin: %@", _sin);
     }
 }
 
@@ -46,7 +52,7 @@
         _tokenText.text = @"Please get a pairing code from test.bitpay.com";
     } else {
         
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:@"https://test.bitpay.com/tokens"]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@/tokens", bitpayUrl]]];
         
         NSString *postString = [NSString stringWithFormat:@"id=%@&label=Test&pairingCode=%@", _sin, _pairText.text];
 
@@ -59,12 +65,33 @@
 }
 
 - (IBAction)testCreatInvoice:(id)sender {
-    if(_token == nil) {
-        _invoiceText.text = @"Please geneate a token before creating an invoice here.";
-    } else {
-        //create token
+    
+    if(_token == nil || _key == nil || _sin == nil) {
+        _invoiceText.text = @"Please geneate a key/sin/token before creating an invoice here.";
+        return;
     }
-
+    
+    NSString *pubKey = [IosSDK getPublicKeyFromPem:_key];
+    NSLog(@"public key: %@", pubKey);
+    NSLog(@"private key: %@", [IosSDK getPrivateKeyFromPem:_key]);
+    
+    NSString *postString = [NSString stringWithFormat:@"{\"currency\":\"USD\",\"price\":20,\"token\":\"%@\"}", _token];
+    
+    NSString *message = [NSString stringWithFormat: @"https://test.bitpay.com/invoices%@", postString];
+    
+    _signedMessage = [IosSDK sign:message withPem:_key];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@/invoices", bitpayUrl]]];
+    
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
+    [request addValue:@"2.0.0" forHTTPHeaderField:@"x-accept-version"];
+    [request addValue:pubKey forHTTPHeaderField:@"x-identity"];
+    [request addValue:_signedMessage forHTTPHeaderField:@"x-signature"];
+    [request setHTTPMethod:@"POST"];
+    
+    [NSURLConnection connectionWithRequest:request delegate:self];
+    
 }
 
 #pragma mark NSURLConnection Delegate Methods
@@ -92,17 +119,41 @@
                  error:&error];
     
     if(error) {
-        _tokenText.text = @"There was an error from the api";
+        _tokenText.text = genericErrorMessage;
     }
     
     if([object isKindOfClass:[NSDictionary class]]) {
+        
         NSDictionary *results = object;
-        _tokenText.text = [results description];
+        NSString *error = [results objectForKey:@"error"];
+        
+        if(error) {
+            NSLog(@"error: %@", error);
+            _invoiceText.text = error;
+            return;
+        }
+        
+        NSDictionary *data = [results valueForKeyPath: @"data"];
+        
+        if(data) {
+            id tokenId = [data valueForKeyPath: @"token"];
+            if([tokenId isKindOfClass:[NSArray class]]) {
+                NSArray *tokenArray = tokenId;
+                _token = tokenArray[0];
+                _tokenText.text = _token;
+            }
+            _invoiceText.text = [results description];
+        } else {
+            _invoiceText.text = [results description];
+            NSLog(@"%@", [results description]);
+            return;
+        }
     }
 
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"there was an error.");
 }
 
 @end

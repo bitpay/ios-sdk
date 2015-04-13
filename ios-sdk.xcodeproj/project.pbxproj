@@ -13,7 +13,6 @@
 		97D48A3B1AD57E0F00B0ACB7 /* ios-sdkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D48A3A1AD57E0F00B0ACB7 /* ios-sdkTests.m */; };
 		97D48A3D1AD57F7100B0ACB7 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A3C1AD57F7100B0ACB7 /* openssl.framework */; };
 		97D48A3E1AD57F7100B0ACB7 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A3C1AD57F7100B0ACB7 /* openssl.framework */; };
-		E4F00FDB1AD9541400974DCE /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F00FDA1AD9541400974DCE /* libcrypto.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		97B917C21ADC060400B93AB1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "ios-sdk/libcrypto.a"; sourceTree = "<group>"; };
 		97D48A201AD57DB600B0ACB7 /* libios-sdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libios-sdk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D48A231AD57DB600B0ACB7 /* ios-sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-sdk.h"; sourceTree = "<group>"; };
 		97D48A251AD57DB600B0ACB7 /* ios-sdk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ios-sdk.m"; sourceTree = "<group>"; };
@@ -47,7 +47,6 @@
 		97D48A311AD57DB600B0ACB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97D48A3A1AD57E0F00B0ACB7 /* ios-sdkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ios-sdkTests.m"; sourceTree = "<group>"; };
 		97D48A3C1AD57F7100B0ACB7 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = openssl.framework; path = "ios-sdk/openssl.framework"; sourceTree = "<group>"; };
-		E4F00FDA1AD9541400974DCE /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4F00FDB1AD9541400974DCE /* libcrypto.a in Frameworks */,
 				97D48A3D1AD57F7100B0ACB7 /* openssl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,10 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97B917C11ADC05C300B93AB1 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				97B917C21ADC060400B93AB1 /* libcrypto.a */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		97D48A171AD57DB600B0ACB7 = {
 			isa = PBXGroup;
 			children = (
-				E4F00FDA1AD9541400974DCE /* libcrypto.a */,
+				97B917C11ADC05C300B93AB1 /* libs */,
 				97D48A3F1AD57FEA00B0ACB7 /* Frameworks */,
 				97D48A221AD57DB600B0ACB7 /* ios-sdk */,
 				97D48A2F1AD57DB600B0ACB7 /* ios-sdkTests */,
@@ -321,6 +327,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ios-sdk",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -338,6 +345,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ios-sdk",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
