@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ios-sdk/ios-sdk.h"
+#import "ios-sdk/keyutils.h"
 
 @interface ViewController : UIViewController<NSURLConnectionDelegate>
 

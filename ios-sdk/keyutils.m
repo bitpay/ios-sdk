@@ -1,11 +1,11 @@
 //
-//  ios-sdk.m
+//  keyutils.m
 //
 //  Created by Chris Kleeschulte on 4/7/15.
 //  Copyright (c) 2015 BitPay. All rights reserved.
 //
 
-#import "ios-sdk.h"
+#import "keyutils.h"
 #import <openssl/sha.h>
 #import <openssl/ripemd.h>
 #import <openssl/ecdsa.h>
@@ -13,7 +13,7 @@
 #import <openssl/pem.h>
 
 
-@implementation IosSDK
+@implementation KeyUtils
 
 
 + (NSString *)generatePem {

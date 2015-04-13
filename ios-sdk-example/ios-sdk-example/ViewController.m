@@ -31,7 +31,7 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
 }
 
 - (IBAction)generateKeys:(id)sender {
-    _key = [IosSDK generatePem];
+    _key = [KeyUtils generatePem];
     _keyText.text = _key;
     NSLog(@"pem key: %@", _key);
 }
@@ -40,7 +40,7 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
     if(_key == nil) {
         _sinText.text = @"Please generate a key in the previous step first.";
     } else {
-        _sin = [IosSDK generateSinFromPem:_key];
+        _sin = [KeyUtils generateSinFromPem:_key];
         _sinText.text = _sin;
         NSLog(@"sin: %@", _sin);
     }
@@ -71,15 +71,15 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
         return;
     }
     
-    NSString *pubKey = [IosSDK getPublicKeyFromPem:_key];
+    NSString *pubKey = [KeyUtils getPublicKeyFromPem:_key];
     NSLog(@"public key: %@", pubKey);
-    NSLog(@"private key: %@", [IosSDK getPrivateKeyFromPem:_key]);
+    NSLog(@"private key: %@", [KeyUtils getPrivateKeyFromPem:_key]);
     
     NSString *postString = [NSString stringWithFormat:@"{\"currency\":\"USD\",\"price\":20,\"token\":\"%@\"}", _token];
     
     NSString *message = [NSString stringWithFormat: @"https://test.bitpay.com/invoices%@", postString];
     
-    _signedMessage = [IosSDK sign:message withPem:_key];
+    _signedMessage = [KeyUtils sign:message withPem:_key];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@/invoices", bitpayUrl]]];
     
