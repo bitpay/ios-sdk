@@ -6,7 +6,7 @@
 //
 #import <Foundation/Foundation.h>
 
-@interface KeyUtils : NSObject
+@interface BPKeyUtils : NSObject
 
 + (NSString *)generatePem;
 + (NSString *)getPublicKeyFromPem:(NSString *)pem;

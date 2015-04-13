@@ -13,7 +13,7 @@
 #import <openssl/pem.h>
 
 
-@implementation KeyUtils
+@implementation BPKeyUtils
 
 
 + (NSString *)generatePem {
