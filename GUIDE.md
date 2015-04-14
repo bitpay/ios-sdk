@@ -25,7 +25,7 @@ This SDK provides the capability of internally storing the private key on the cl
 
 ```objective-c
 // Create the private key using the SDK, store it as required, and inject the private key into the SDK.
-NSString *pem = [KeyUtils generatePem];
+NSString *pem = [BPKeyUtils generatePem];
 ```
 
 #### Pairing with Bitpay.com
@@ -39,8 +39,8 @@ Pairing is accomplished by obtaining a pairing code from the BitPay server.  The
 ```objective-c
 // Obtain a pairingCode from your BitPay account administrator. 
 NSString *pairingCode = "abcdefg";
-NSString *pem = [KeyUtils generatePem];
-NSString *sin = [KeyUtils generateSinFromPem: pem];
+NSString *pem = [BPKeyUtils generatePem];
+NSString *sin = [BPKeyUtils generateSinFromPem: pem];
 NSString *labelForToken = @"MyLabel";
         
 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:@"https://test.bitpay.com/tokens"]];
@@ -63,14 +63,14 @@ NSString *token;
 //this comes from the last step called "server initiated pairing"
 NSString *pem;
 
-NSString *pubKey = [KeyUtils getPublicKeyFromPem:pem];
+NSString *pubKey = [BPKeyUtils getPublicKeyFromPem:pem];
 
 //the currency and price are, of course, variable to your needs
 NSString *postString = [NSString stringWithFormat:@"{\"currency\":\"USD\",\"price\":20,\"token\":\"%@\"}", token];
 
 NSString *message = [NSString stringWithFormat: @"https://test.bitpay.com/invoices%@", postString];
 
-NSString *signedMessage = [KeyUtils sign:message withPem:pem];
+NSString *signedMessage = [BPKeyUtils sign:message withPem:pem];
 
 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:@"https://test.bitpay.com/invoices"]]];
 

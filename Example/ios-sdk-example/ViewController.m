@@ -31,7 +31,7 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
 }
 
 - (IBAction)generateKeys:(id)sender {
-    _key = [KeyUtils generatePem];
+    _key = [BPKeyUtils generatePem];
     _keyText.text = _key;
     NSLog(@"pem key: %@", _key);
 }
@@ -40,7 +40,7 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
     if(_key == nil) {
         _sinText.text = @"Please generate a key in the previous step first.";
     } else {
-        _sin = [KeyUtils generateSinFromPem:_key];
+        _sin = [BPKeyUtils generateSinFromPem:_key];
         _sinText.text = _sin;
         NSLog(@"sin: %@", _sin);
     }
@@ -51,6 +51,8 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
     if(_pairText.text == nil) {
         _tokenText.text = @"Please get a pairing code from test.bitpay.com";
     } else {
+        
+        NSLog(@"pairingCode: %@", _pairText.text);
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@/tokens", bitpayUrl]]];
         
@@ -71,15 +73,15 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
         return;
     }
     
-    NSString *pubKey = [KeyUtils getPublicKeyFromPem:_key];
+    NSString *pubKey = [BPKeyUtils getPublicKeyFromPem:_key];
     NSLog(@"public key: %@", pubKey);
-    NSLog(@"private key: %@", [KeyUtils getPrivateKeyFromPem:_key]);
+    NSLog(@"private key: %@", [BPKeyUtils getPrivateKeyFromPem:_key]);
     
     NSString *postString = [NSString stringWithFormat:@"{\"currency\":\"USD\",\"price\":20,\"token\":\"%@\"}", _token];
     
     NSString *message = [NSString stringWithFormat: @"%@/invoices%@", bitpayUrl, postString];
     
-    _signedMessage = [KeyUtils sign:message withPem:_key];
+    _signedMessage = [BPKeyUtils sign:message withPem:_key];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@/invoices", bitpayUrl]]];
     
