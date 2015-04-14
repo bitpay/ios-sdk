@@ -1,9 +1,8 @@
 # BitPay Library for iOS 
 Powerful, flexible, lightweight interface to the BitPay Bitcoin Payment Gateway API.
 
-[![Version](https://img.shields.io/cocoapods/v/ios-sdk.svg?style=flat)](http://cocoapods.org/pods/bitpay-ios-sdk)
-[![License](https://img.shields.io/cocoapods/l/ios-sdk.svg?style=flat)](http://cocoapods.org/pods/bitpay-ios-sdk)
-[![Platform](https://img.shields.io/cocoapods/p/ios-sdk.svg?style=flat)](http://cocoapods.org/pods/bitpay-ios-sdk)
+[![Software License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat)](LICENSE.md) 
+[![Latest Release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/bitpay/ios-sdk/releases/latest)
 [![](https://travis-ci.org/bitpay/ios-sdk.svg?branch=master)](https://travis-ci.org/bitpay/ios-sdk)
 
 ## [Getting Started &raquo;](http://dev.bitpay.com/guides/ios.html)
