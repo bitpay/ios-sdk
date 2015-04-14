@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97D48A241AD57DB600B0ACB7 /* keyutils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 97D48A231AD57DB600B0ACB7 /* keyutils.h */; };
-		97D48A261AD57DB600B0ACB7 /* keyutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D48A251AD57DB600B0ACB7 /* keyutils.m */; };
+		975CFE121ADD8E3000DDE97F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE111ADD8E3000DDE97F /* libcrypto.a */; };
+		975CFE141ADD8E3E00DDE97F /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE131ADD8E3E00DDE97F /* openssl.framework */; };
+		975CFE171ADD8EA100DDE97F /* keyutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 975CFE161ADD8EA100DDE97F /* keyutils.m */; };
+		975CFE191ADD8ECA00DDE97F /* keyutilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 975CFE181ADD8ECA00DDE97F /* keyutilsTests.m */; };
+		975CFE2A1ADD965500DDE97F /* keyutils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 975CFE151ADD8EA100DDE97F /* keyutils.h */; };
 		97D48A2C1AD57DB600B0ACB7 /* libios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A201AD57DB600B0ACB7 /* libios-sdk.a */; };
-		97D48A3B1AD57E0F00B0ACB7 /* keyutilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D48A3A1AD57E0F00B0ACB7 /* keyutilsTests.m */; };
-		97D48A3D1AD57F7100B0ACB7 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A3C1AD57F7100B0ACB7 /* openssl.framework */; };
-		97D48A3E1AD57F7100B0ACB7 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D48A3C1AD57F7100B0ACB7 /* openssl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,21 +32,21 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				97D48A241AD57DB600B0ACB7 /* keyutils.h in CopyFiles */,
+				975CFE2A1ADD965500DDE97F /* keyutils.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		97B917C21ADC060400B93AB1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "ios-sdk/libcrypto.a"; sourceTree = "<group>"; };
+		975CFE111ADD8E3000DDE97F /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		975CFE131ADD8E3E00DDE97F /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
+		975CFE151ADD8EA100DDE97F /* keyutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keyutils.h; sourceTree = SOURCE_ROOT; };
+		975CFE161ADD8EA100DDE97F /* keyutils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyutils.m; sourceTree = SOURCE_ROOT; };
+		975CFE181ADD8ECA00DDE97F /* keyutilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyutilsTests.m; sourceTree = "<group>"; };
 		97D48A201AD57DB600B0ACB7 /* libios-sdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libios-sdk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		97D48A231AD57DB600B0ACB7 /* keyutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keyutils.h; sourceTree = "<group>"; };
-		97D48A251AD57DB600B0ACB7 /* keyutils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = keyutils.m; sourceTree = "<group>"; };
 		97D48A2B1AD57DB600B0ACB7 /* ios-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D48A311AD57DB600B0ACB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97D48A3A1AD57E0F00B0ACB7 /* keyutilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyutilsTests.m; sourceTree = "<group>"; };
-		97D48A3C1AD57F7100B0ACB7 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = openssl.framework; path = "ios-sdk/openssl.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D48A3D1AD57F7100B0ACB7 /* openssl.framework in Frameworks */,
+				975CFE121ADD8E3000DDE97F /* libcrypto.a in Frameworks */,
+				975CFE141ADD8E3E00DDE97F /* openssl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +64,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				97D48A2C1AD57DB600B0ACB7 /* libios-sdk.a in Frameworks */,
-				97D48A3E1AD57F7100B0ACB7 /* openssl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 		97B917C11ADC05C300B93AB1 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				97B917C21ADC060400B93AB1 /* libcrypto.a */,
+				975CFE111ADD8E3000DDE97F /* libcrypto.a */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -101,8 +101,8 @@
 		97D48A221AD57DB600B0ACB7 /* ios-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				97D48A231AD57DB600B0ACB7 /* keyutils.h */,
-				97D48A251AD57DB600B0ACB7 /* keyutils.m */,
+				975CFE151ADD8EA100DDE97F /* keyutils.h */,
+				975CFE161ADD8EA100DDE97F /* keyutils.m */,
 			);
 			path = "ios-sdk";
 			sourceTree = "<group>";
@@ -110,8 +110,8 @@
 		97D48A2F1AD57DB600B0ACB7 /* ios-sdkTests */ = {
 			isa = PBXGroup;
 			children = (
+				975CFE181ADD8ECA00DDE97F /* keyutilsTests.m */,
 				97D48A301AD57DB600B0ACB7 /* Supporting Files */,
-				97D48A3A1AD57E0F00B0ACB7 /* keyutilsTests.m */,
 			);
 			path = "ios-sdkTests";
 			sourceTree = "<group>";
@@ -127,7 +127,7 @@
 		97D48A3F1AD57FEA00B0ACB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97D48A3C1AD57F7100B0ACB7 /* openssl.framework */,
+				975CFE131ADD8E3E00DDE97F /* openssl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D48A261AD57DB600B0ACB7 /* keyutils.m in Sources */,
+				975CFE171ADD8EA100DDE97F /* keyutils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D48A3B1AD57E0F00B0ACB7 /* keyutilsTests.m in Sources */,
+				975CFE191ADD8ECA00DDE97F /* keyutilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -310,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -323,6 +323,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ios-sdk",
+					"$(PROJECT_DIR)",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +342,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ios-sdk",
+					"$(PROJECT_DIR)",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

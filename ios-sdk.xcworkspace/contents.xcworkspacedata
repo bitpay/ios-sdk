@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ios-sdk-example/ios-sdk-example.xcodeproj">
+      location = "group:Example/ios-sdk-example.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:ios-sdk.xcodeproj">

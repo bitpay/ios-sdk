@@ -1,11 +1,8 @@
-# BitPay Library for iOS 
-Powerful, flexible, lightweight interface to the BitPay Bitcoin Payment Gateway API.
-
-[![Version](https://img.shields.io/cocoapods/v/ios-sdk.svg?style=flat)](http://cocoapods.org/pods/ios-sdk)
-[![License](https://img.shields.io/cocoapods/l/ios-sdk.svg?style=flat)](http://cocoapods.org/pods/ios-sdk)
-[![Platform](https://img.shields.io/cocoapods/p/ios-sdk.svg?style=flat)](http://cocoapods.org/pods/ios-sdk)
-[![](https://travis-ci.org/bitpay/ios-sdk.svg?branch=master)](https://travis-ci.org/bitpay/ios-sdk)
-
+Pod::Spec.new do |s|
+s.name             = "ios-sdk"
+s.version          = "2.0.0"
+s.summary          = "Powerful, flexible, lightweight interface to the BitPay Bitcoin Payment Gateway API for iOS."
+s.description      = <<-DESC
 ## [Getting Started &raquo;](http://dev.bitpay.com/guides/ios.html)
 
 ## API Documentation
@@ -14,10 +11,10 @@ API Documentation is available on the [BitPay site](https://bitpay.com/api).
 
 ## Running the Tests
 
-Before running the behavior tests, you will need a test.bitpay.com account and you will need to set the local constants. 
+Before running the behavior tests, you will need a test.bitpay.com account and you will need to set the local constants.
 
 To run unit tests:
-> Open Xcode -> key commands are: Command + u 
+> Open Xcode -> key commands are: Command + u
 
 ## Found a bug?
 Let us know! Send a pull request or a patch. Questions? Ask! We're here to help. We will respond to all filed issues.
@@ -36,3 +33,15 @@ Sometimes a download can become corrupted for various reasons.  However, you can
 * md5sum filename
 * On OS X use the md5 program.  For example:
 * md5 filename
+DESC
+s.homepage         = "https://github.com/bitpay/ios-sdk"
+s.license      = 'MIT'
+s.author           = { "Chris Kleeschulte" => "chrisk@bitpay.com" }
+s.source           = { :git => "https://github.com/bitpay/ios-sdk.git", :tag => "v#{s.version}" }
+s.platform     = :ios, '7.0'
+s.requires_arc = true
+s.public_header_files = "*.h"
+s.source_files = 'keyutils.{h,m}'
+s.requires_arc = true
+s.vendored_frameworks = 'openssl.framework'
+end

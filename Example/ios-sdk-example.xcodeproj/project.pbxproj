@@ -7,30 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97B917CB1ADC083800B93AB1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B917C41ADC065000B93AB1 /* libcrypto.a */; };
-		97B917CD1ADC085600B93AB1 /* libios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B917CC1ADC085600B93AB1 /* libios-sdk.a */; };
+		975CFE1C1ADD940900DDE97F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE1B1ADD940900DDE97F /* libcrypto.a */; };
+		975CFE291ADD95A700DDE97F /* libios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE281ADD95A700DDE97F /* libios-sdk.a */; };
 		E48416391AD8A02B000DC153 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48416381AD8A02B000DC153 /* main.m */; };
 		E484163C1AD8A02B000DC153 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E484163B1AD8A02B000DC153 /* AppDelegate.m */; };
 		E484163F1AD8A02B000DC153 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E484163E1AD8A02B000DC153 /* ViewController.m */; };
 		E48416421AD8A02B000DC153 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48416401AD8A02B000DC153 /* Main.storyboard */; };
 		E48416441AD8A02B000DC153 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48416431AD8A02B000DC153 /* Images.xcassets */; };
 		E48416471AD8A02B000DC153 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48416451AD8A02B000DC153 /* LaunchScreen.xib */; };
-		E48416531AD8A02B000DC153 /* ios_sdk_exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E48416521AD8A02B000DC153 /* ios_sdk_exampleTests.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E484164D1AD8A02B000DC153 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E484162B1AD8A02B000DC153 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E48416321AD8A02B000DC153;
-			remoteInfo = "ios-sdk-example";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		97B917C41ADC065000B93AB1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../ios-sdk/libcrypto.a"; sourceTree = "<group>"; };
-		97B917CC1ADC085600B93AB1 /* libios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libios-sdk.a"; path = "../build/Debug-iphoneos/libios-sdk.a"; sourceTree = "<group>"; };
+		975CFE1B1ADD940900DDE97F /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../libcrypto.a; sourceTree = "<group>"; };
+		975CFE281ADD95A700DDE97F /* libios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libios-sdk.a"; path = "../build/Debug-iphoneos/libios-sdk.a"; sourceTree = "<group>"; };
 		E48416331AD8A02B000DC153 /* ios-sdk-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48416371AD8A02B000DC153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E48416381AD8A02B000DC153 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,9 +30,7 @@
 		E48416411AD8A02B000DC153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E48416431AD8A02B000DC153 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E48416461AD8A02B000DC153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E484164C1AD8A02B000DC153 /* ios-sdk-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-sdk-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48416511AD8A02B000DC153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E48416521AD8A02B000DC153 /* ios_sdk_exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_sdk_exampleTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,15 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97B917CD1ADC085600B93AB1 /* libios-sdk.a in Frameworks */,
-				97B917CB1ADC083800B93AB1 /* libcrypto.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E48416491AD8A02B000DC153 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				975CFE291ADD95A700DDE97F /* libios-sdk.a in Frameworks */,
+				975CFE1C1ADD940900DDE97F /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,8 +49,7 @@
 		97B917C01ADC02F300B93AB1 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				97B917CC1ADC085600B93AB1 /* libios-sdk.a */,
-				97B917C41ADC065000B93AB1 /* libcrypto.a */,
+				975CFE1B1ADD940900DDE97F /* libcrypto.a */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -78,6 +57,7 @@
 		E484162A1AD8A02B000DC153 = {
 			isa = PBXGroup;
 			children = (
+				975CFE281ADD95A700DDE97F /* libios-sdk.a */,
 				97B917C01ADC02F300B93AB1 /* libs */,
 				E48416351AD8A02B000DC153 /* ios-sdk-example */,
 				E484164F1AD8A02B000DC153 /* ios-sdk-exampleTests */,
@@ -89,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				E48416331AD8A02B000DC153 /* ios-sdk-example.app */,
-				E484164C1AD8A02B000DC153 /* ios-sdk-exampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,7 +100,6 @@
 		E484164F1AD8A02B000DC153 /* ios-sdk-exampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				E48416521AD8A02B000DC153 /* ios_sdk_exampleTests.m */,
 				E48416501AD8A02B000DC153 /* Supporting Files */,
 			);
 			path = "ios-sdk-exampleTests";
@@ -155,24 +133,6 @@
 			productReference = E48416331AD8A02B000DC153 /* ios-sdk-example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E484164B1AD8A02B000DC153 /* ios-sdk-exampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E48416591AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-exampleTests" */;
-			buildPhases = (
-				E48416481AD8A02B000DC153 /* Sources */,
-				E48416491AD8A02B000DC153 /* Frameworks */,
-				E484164A1AD8A02B000DC153 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E484164E1AD8A02B000DC153 /* PBXTargetDependency */,
-			);
-			name = "ios-sdk-exampleTests";
-			productName = "ios-sdk-exampleTests";
-			productReference = E484164C1AD8A02B000DC153 /* ios-sdk-exampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,10 +144,6 @@
 				TargetAttributes = {
 					E48416321AD8A02B000DC153 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					E484164B1AD8A02B000DC153 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = E48416321AD8A02B000DC153;
 					};
 				};
 			};
@@ -205,7 +161,6 @@
 			projectRoot = "";
 			targets = (
 				E48416321AD8A02B000DC153 /* ios-sdk-example */,
-				E484164B1AD8A02B000DC153 /* ios-sdk-exampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,13 +173,6 @@
 				E48416421AD8A02B000DC153 /* Main.storyboard in Resources */,
 				E48416471AD8A02B000DC153 /* LaunchScreen.xib in Resources */,
 				E48416441AD8A02B000DC153 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E484164A1AD8A02B000DC153 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,23 +189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E48416481AD8A02B000DC153 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E48416531AD8A02B000DC153 /* ios_sdk_exampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E484164E1AD8A02B000DC153 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E48416321AD8A02B000DC153 /* ios-sdk-example */;
-			targetProxy = E484164D1AD8A02B000DC153 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E48416401AD8A02B000DC153 /* Main.storyboard */ = {
@@ -376,6 +308,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/chrisk/source/ios-sdk/ios-sdk",
+					"/Users/chrisk/source/cocoapods/ios-sdk-flat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -394,42 +327,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/chrisk/source/ios-sdk/ios-sdk",
+					"/Users/chrisk/source/cocoapods/ios-sdk-flat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E484165A1AD8A02B000DC153 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ios-sdk-exampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-sdk-example.app/ios-sdk-example";
-			};
-			name = Debug;
-		};
-		E484165B1AD8A02B000DC153 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ios-sdk-exampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-sdk-example.app/ios-sdk-example";
 			};
 			name = Release;
 		};
@@ -450,15 +350,6 @@
 			buildConfigurations = (
 				E48416571AD8A02B000DC153 /* Debug */,
 				E48416581AD8A02B000DC153 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E48416591AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-exampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E484165A1AD8A02B000DC153 /* Debug */,
-				E484165B1AD8A02B000DC153 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
