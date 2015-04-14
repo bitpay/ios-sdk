@@ -42,6 +42,5 @@ s.platform     = :ios, '7.0'
 s.requires_arc = true
 s.public_header_files = "*.h"
 s.source_files = 'keyutils.{h,m}'
-s.requires_arc = true
 s.vendored_frameworks = 'openssl.framework'
 end
