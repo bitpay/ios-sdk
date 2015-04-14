@@ -2,7 +2,7 @@
 Powerful, flexible, lightweight interface to the BitPay Bitcoin Payment Gateway API.
 
 [![Software License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat)](LICENSE.md) 
-[![Latest Release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/bitpay/ios-sdk/releases/latest)
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/bitpay/ios-sdk/releases)
 [![](https://travis-ci.org/bitpay/ios-sdk.svg?branch=master)](https://travis-ci.org/bitpay/ios-sdk)
 
 ## [Getting Started &raquo;](http://dev.bitpay.com/guides/ios.html)
