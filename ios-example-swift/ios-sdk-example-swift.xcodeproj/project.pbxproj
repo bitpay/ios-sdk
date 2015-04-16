@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97D779011ADEB0B0005D7B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D779001ADEB0B0005D7B4C /* AppDelegate.swift */; };
+		97D779031ADEB0B0005D7B4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D779021ADEB0B0005D7B4C /* ViewController.swift */; };
+		97D779061ADEB0B0005D7B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D779041ADEB0B0005D7B4C /* Main.storyboard */; };
+		97D779081ADEB0B0005D7B4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D779071ADEB0B0005D7B4C /* Images.xcassets */; };
+		97D7790B1ADEB0B0005D7B4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D779091ADEB0B0005D7B4C /* LaunchScreen.xib */; };
+		97D779221ADEB147005D7B4C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D779211ADEB147005D7B4C /* libcrypto.a */; };
+		97D779241ADEB158005D7B4C /* libios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D779231ADEB158005D7B4C /* libios-sdk.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		97D778FB1ADEB0B0005D7B4C /* ios-sdk-example-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97D778FF1ADEB0B0005D7B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D779001ADEB0B0005D7B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		97D779021ADEB0B0005D7B4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97D779051ADEB0B0005D7B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97D779071ADEB0B0005D7B4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		97D7790A1ADEB0B0005D7B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		97D779211ADEB147005D7B4C /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../libcrypto.a; sourceTree = "<group>"; };
+		97D779231ADEB158005D7B4C /* libios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libios-sdk.a"; path = "../build/Debug-iphoneos/libios-sdk.a"; sourceTree = "<group>"; };
+		97D779251ADEB1CB005D7B4C /* Ios-sdk-example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ios-sdk-example-Bridging-Header.h"; sourceTree = "<group>"; };
+		97D779261ADEB2D0005D7B4C /* keyutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = keyutils.h; path = ../keyutils.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97D778F81ADEB0B0005D7B4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D779241ADEB158005D7B4C /* libios-sdk.a in Frameworks */,
+				97D779221ADEB147005D7B4C /* libcrypto.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97D778F21ADEB0B0005D7B4C = {
+			isa = PBXGroup;
+			children = (
+				97D779261ADEB2D0005D7B4C /* keyutils.h */,
+				97D779231ADEB158005D7B4C /* libios-sdk.a */,
+				97D779201ADEB11A005D7B4C /* libs */,
+				97D778FD1ADEB0B0005D7B4C /* ios-example-swift */,
+				97D778FC1ADEB0B0005D7B4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97D778FC1ADEB0B0005D7B4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97D778FB1ADEB0B0005D7B4C /* ios-sdk-example-swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97D778FD1ADEB0B0005D7B4C /* ios-example-swift */ = {
+			isa = PBXGroup;
+			children = (
+				97D779001ADEB0B0005D7B4C /* AppDelegate.swift */,
+				97D779021ADEB0B0005D7B4C /* ViewController.swift */,
+				97D779251ADEB1CB005D7B4C /* Ios-sdk-example-Bridging-Header.h */,
+				97D779041ADEB0B0005D7B4C /* Main.storyboard */,
+				97D779071ADEB0B0005D7B4C /* Images.xcassets */,
+				97D779091ADEB0B0005D7B4C /* LaunchScreen.xib */,
+				97D778FE1ADEB0B0005D7B4C /* Supporting Files */,
+			);
+			path = "ios-example-swift";
+			sourceTree = "<group>";
+		};
+		97D778FE1ADEB0B0005D7B4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				97D778FF1ADEB0B0005D7B4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		97D779201ADEB11A005D7B4C /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				97D779211ADEB147005D7B4C /* libcrypto.a */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97D778FA1ADEB0B0005D7B4C /* ios-sdk-example-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97D7791A1ADEB0B0005D7B4C /* Build configuration list for PBXNativeTarget "ios-sdk-example-swift" */;
+			buildPhases = (
+				97D778F71ADEB0B0005D7B4C /* Sources */,
+				97D778F81ADEB0B0005D7B4C /* Frameworks */,
+				97D778F91ADEB0B0005D7B4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-sdk-example-swift";
+			productName = "ios-example-swift";
+			productReference = 97D778FB1ADEB0B0005D7B4C /* ios-sdk-example-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97D778F31ADEB0B0005D7B4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = bitpay;
+				TargetAttributes = {
+					97D778FA1ADEB0B0005D7B4C = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 97D778F61ADEB0B0005D7B4C /* Build configuration list for PBXProject "ios-sdk-example-swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97D778F21ADEB0B0005D7B4C;
+			productRefGroup = 97D778FC1ADEB0B0005D7B4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97D778FA1ADEB0B0005D7B4C /* ios-sdk-example-swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97D778F91ADEB0B0005D7B4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D779061ADEB0B0005D7B4C /* Main.storyboard in Resources */,
+				97D7790B1ADEB0B0005D7B4C /* LaunchScreen.xib in Resources */,
+				97D779081ADEB0B0005D7B4C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97D778F71ADEB0B0005D7B4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D779031ADEB0B0005D7B4C /* ViewController.swift in Sources */,
+				97D779011ADEB0B0005D7B4C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		97D779041ADEB0B0005D7B4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97D779051ADEB0B0005D7B4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		97D779091ADEB0B0005D7B4C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97D7790A1ADEB0B0005D7B4C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97D779181ADEB0B0005D7B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ios-example-swift/Ios-sdk-example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97D779191ADEB0B0005D7B4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97D7791B1ADEB0B0005D7B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ios-example-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chrisk/source/ios-sdk",
+				);
+				PRODUCT_NAME = "ios-sdk-example-swift";
+			};
+			name = Debug;
+		};
+		97D7791C1ADEB0B0005D7B4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ios-example-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chrisk/source/ios-sdk",
+				);
+				PRODUCT_NAME = "ios-sdk-example-swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97D778F61ADEB0B0005D7B4C /* Build configuration list for PBXProject "ios-sdk-example-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D779181ADEB0B0005D7B4C /* Debug */,
+				97D779191ADEB0B0005D7B4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97D7791A1ADEB0B0005D7B4C /* Build configuration list for PBXNativeTarget "ios-sdk-example-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D7791B1ADEB0B0005D7B4C /* Debug */,
+				97D7791C1ADEB0B0005D7B4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97D778F31ADEB0B0005D7B4C /* Project object */;
+}

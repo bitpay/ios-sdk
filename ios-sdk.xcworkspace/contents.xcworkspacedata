@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ios-example-swift/ios-sdk-example-swift.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Example/ios-sdk-example.xcodeproj">
    </FileRef>
    <FileRef
