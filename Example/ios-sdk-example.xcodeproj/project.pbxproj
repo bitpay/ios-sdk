@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		975CFE1C1ADD940900DDE97F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE1B1ADD940900DDE97F /* libcrypto.a */; };
 		975CFE291ADD95A700DDE97F /* libios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE281ADD95A700DDE97F /* libios-sdk.a */; };
+		97D779281ADEF8C4005D7B4C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE1B1ADD940900DDE97F /* libcrypto.a */; };
 		E48416391AD8A02B000DC153 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48416381AD8A02B000DC153 /* main.m */; };
 		E484163C1AD8A02B000DC153 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E484163B1AD8A02B000DC153 /* AppDelegate.m */; };
 		E484163F1AD8A02B000DC153 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E484163E1AD8A02B000DC153 /* ViewController.m */; };
@@ -38,8 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97D779281ADEF8C4005D7B4C /* libcrypto.a in Frameworks */,
 				975CFE291ADD95A700DDE97F /* libios-sdk.a in Frameworks */,
-				975CFE1C1ADD940900DDE97F /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,8 +307,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/chrisk/source/ios-sdk/ios-sdk",
-					"/Users/chrisk/source/cocoapods/ios-sdk-flat",
+					"/Users/chrisk/source/ios-sdk",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -326,8 +325,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/chrisk/source/ios-sdk/ios-sdk",
-					"/Users/chrisk/source/cocoapods/ios-sdk-flat",
+					"/Users/chrisk/source/ios-sdk",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
