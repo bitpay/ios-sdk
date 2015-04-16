@@ -28,7 +28,7 @@ This SDK provides the capability of internally storing the private key on the cl
 NSString *pem = [BPKeyUtils generatePem];
 ```
 
-#### Pairing with Bitpay.com
+### Pairing
 
 Before pairing with BitPay.com, you'll need to log in to your BitPay account and navigate to /api-tokens. Generate a new pairing code and use it in the next step. In this example, it's assumed that we are working against the bitpay test server and have generated the pairing code "abcdefg". You will use the pairing code to get a token. Pairing codes are one time use and expire 24 hours after creation. Once you've used the pairing code to get your token, they can be used without expiration. You must send the token in every request thereafter.
 
@@ -53,7 +53,7 @@ NSString *postString = [NSString stringWithFormat:@"id=%@&label=%@&pairingCode=%
 //set this class as the delegate for the NSURLConnectionDelegate protocol
 [NSURLConnection connectionWithRequest:request delegate:self];
 ```
-
+### Examples
 #### Create an invoice
 
 ```objective-c
