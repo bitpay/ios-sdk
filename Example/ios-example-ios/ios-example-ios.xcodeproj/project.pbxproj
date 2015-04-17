@@ -7,30 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		975CFE291ADD95A700DDE97F /* libios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE281ADD95A700DDE97F /* libios-sdk.a */; };
-		97D779281ADEF8C4005D7B4C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975CFE1B1ADD940900DDE97F /* libcrypto.a */; };
-		E48416391AD8A02B000DC153 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48416381AD8A02B000DC153 /* main.m */; };
-		E484163C1AD8A02B000DC153 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E484163B1AD8A02B000DC153 /* AppDelegate.m */; };
-		E484163F1AD8A02B000DC153 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E484163E1AD8A02B000DC153 /* ViewController.m */; };
-		E48416421AD8A02B000DC153 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48416401AD8A02B000DC153 /* Main.storyboard */; };
-		E48416441AD8A02B000DC153 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48416431AD8A02B000DC153 /* Images.xcassets */; };
-		E48416471AD8A02B000DC153 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48416451AD8A02B000DC153 /* LaunchScreen.xib */; };
+		97CE2A701AE0308E003EF3AA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A6F1AE0308E003EF3AA /* libcrypto.a */; };
+		97CE2A721AE030B1003EF3AA /* libkeyutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A711AE030B1003EF3AA /* libkeyutils.a */; };
+		97CE2A821AE032D9003EF3AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A791AE032D9003EF3AA /* AppDelegate.m */; };
+		97CE2A831AE032D9003EF3AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A7B1AE032D9003EF3AA /* LaunchScreen.xib */; };
+		97CE2A841AE032D9003EF3AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A7D1AE032D9003EF3AA /* Main.storyboard */; };
+		97CE2A851AE032D9003EF3AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A7F1AE032D9003EF3AA /* Images.xcassets */; };
+		97CE2A861AE032D9003EF3AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A811AE032D9003EF3AA /* ViewController.m */; };
+		97CE2A881AE03340003EF3AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A871AE03340003EF3AA /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		975CFE1B1ADD940900DDE97F /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../libcrypto.a; sourceTree = "<group>"; };
-		975CFE281ADD95A700DDE97F /* libios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libios-sdk.a"; path = "../build/Debug-iphoneos/libios-sdk.a"; sourceTree = "<group>"; };
-		E48416331AD8A02B000DC153 /* ios-sdk-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E48416371AD8A02B000DC153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E48416381AD8A02B000DC153 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E484163A1AD8A02B000DC153 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E484163B1AD8A02B000DC153 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E484163D1AD8A02B000DC153 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E484163E1AD8A02B000DC153 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E48416411AD8A02B000DC153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E48416431AD8A02B000DC153 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E48416461AD8A02B000DC153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E48416511AD8A02B000DC153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97CE2A6F1AE0308E003EF3AA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../keyutils/libs/libcrypto.a; sourceTree = "<group>"; };
+		97CE2A711AE030B1003EF3AA /* libkeyutils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkeyutils.a; path = "../../keyutils/build/Debug-iphoneos/libkeyutils.a"; sourceTree = "<group>"; };
+		97CE2A781AE032D9003EF3AA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		97CE2A791AE032D9003EF3AA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		97CE2A7C1AE032D9003EF3AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		97CE2A7E1AE032D9003EF3AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		97CE2A7F1AE032D9003EF3AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
+		97CE2A801AE032D9003EF3AA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = SOURCE_ROOT; };
+		97CE2A811AE032D9003EF3AA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = SOURCE_ROOT; };
+		97CE2A871AE03340003EF3AA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		97CE2A891AE033B4003EF3AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		E48416331AD8A02B000DC153 /* ios-sdk-example-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,8 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D779281ADEF8C4005D7B4C /* libcrypto.a in Frameworks */,
-				975CFE291ADD95A700DDE97F /* libios-sdk.a in Frameworks */,
+				97CE2A721AE030B1003EF3AA /* libkeyutils.a in Frameworks */,
+				97CE2A701AE0308E003EF3AA /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,18 +48,26 @@
 		97B917C01ADC02F300B93AB1 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				975CFE1B1ADD940900DDE97F /* libcrypto.a */,
+				97CE2A711AE030B1003EF3AA /* libkeyutils.a */,
+				97CE2A6F1AE0308E003EF3AA /* libcrypto.a */,
 			);
 			name = libs;
 			sourceTree = "<group>";
 		};
+		97CE2A7A1AE032D9003EF3AA /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A7B1AE032D9003EF3AA /* LaunchScreen.xib */,
+				97CE2A7D1AE032D9003EF3AA /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
 		E484162A1AD8A02B000DC153 = {
 			isa = PBXGroup;
 			children = (
-				975CFE281ADD95A700DDE97F /* libios-sdk.a */,
 				97B917C01ADC02F300B93AB1 /* libs */,
-				E48416351AD8A02B000DC153 /* ios-sdk-example */,
-				E484164F1AD8A02B000DC153 /* ios-sdk-exampleTests */,
+				E48416351AD8A02B000DC153 /* ios-example-ios */,
 				E48416341AD8A02B000DC153 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,47 +75,31 @@
 		E48416341AD8A02B000DC153 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E48416331AD8A02B000DC153 /* ios-sdk-example.app */,
+				E48416331AD8A02B000DC153 /* ios-sdk-example-ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E48416351AD8A02B000DC153 /* ios-sdk-example */ = {
+		E48416351AD8A02B000DC153 /* ios-example-ios */ = {
 			isa = PBXGroup;
 			children = (
-				E484163A1AD8A02B000DC153 /* AppDelegate.h */,
-				E484163B1AD8A02B000DC153 /* AppDelegate.m */,
-				E484163D1AD8A02B000DC153 /* ViewController.h */,
-				E484163E1AD8A02B000DC153 /* ViewController.m */,
-				E48416401AD8A02B000DC153 /* Main.storyboard */,
-				E48416431AD8A02B000DC153 /* Images.xcassets */,
-				E48416451AD8A02B000DC153 /* LaunchScreen.xib */,
+				97CE2A781AE032D9003EF3AA /* AppDelegate.h */,
+				97CE2A791AE032D9003EF3AA /* AppDelegate.m */,
+				97CE2A7A1AE032D9003EF3AA /* Base.lproj */,
+				97CE2A7F1AE032D9003EF3AA /* Images.xcassets */,
+				97CE2A801AE032D9003EF3AA /* ViewController.h */,
+				97CE2A811AE032D9003EF3AA /* ViewController.m */,
 				E48416361AD8A02B000DC153 /* Supporting Files */,
 			);
+			name = "ios-example-ios";
 			path = "ios-sdk-example";
 			sourceTree = "<group>";
 		};
 		E48416361AD8A02B000DC153 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E48416371AD8A02B000DC153 /* Info.plist */,
-				E48416381AD8A02B000DC153 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E484164F1AD8A02B000DC153 /* ios-sdk-exampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				E48416501AD8A02B000DC153 /* Supporting Files */,
-			);
-			path = "ios-sdk-exampleTests";
-			sourceTree = "<group>";
-		};
-		E48416501AD8A02B000DC153 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E48416511AD8A02B000DC153 /* Info.plist */,
+				97CE2A891AE033B4003EF3AA /* Info.plist */,
+				97CE2A871AE03340003EF3AA /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -116,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E48416321AD8A02B000DC153 /* ios-sdk-example */ = {
+		E48416321AD8A02B000DC153 /* ios-sdk-example-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example" */;
+			buildConfigurationList = E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example-ios" */;
 			buildPhases = (
 				E484162F1AD8A02B000DC153 /* Sources */,
 				E48416301AD8A02B000DC153 /* Frameworks */,
@@ -128,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = "ios-sdk-example";
+			name = "ios-sdk-example-ios";
 			productName = "ios-sdk-example";
-			productReference = E48416331AD8A02B000DC153 /* ios-sdk-example.app */;
+			productReference = E48416331AD8A02B000DC153 /* ios-sdk-example-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-sdk-example" */;
+			buildConfigurationList = E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-example-ios" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -160,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E48416321AD8A02B000DC153 /* ios-sdk-example */,
+				E48416321AD8A02B000DC153 /* ios-sdk-example-ios */,
 			);
 		};
 /* End PBXProject section */
@@ -170,9 +161,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E48416421AD8A02B000DC153 /* Main.storyboard in Resources */,
-				E48416471AD8A02B000DC153 /* LaunchScreen.xib in Resources */,
-				E48416441AD8A02B000DC153 /* Images.xcassets in Resources */,
+				97CE2A851AE032D9003EF3AA /* Images.xcassets in Resources */,
+				97CE2A831AE032D9003EF3AA /* LaunchScreen.xib in Resources */,
+				97CE2A841AE032D9003EF3AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,29 +174,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E484163F1AD8A02B000DC153 /* ViewController.m in Sources */,
-				E484163C1AD8A02B000DC153 /* AppDelegate.m in Sources */,
-				E48416391AD8A02B000DC153 /* main.m in Sources */,
+				97CE2A861AE032D9003EF3AA /* ViewController.m in Sources */,
+				97CE2A881AE03340003EF3AA /* main.m in Sources */,
+				97CE2A821AE032D9003EF3AA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E48416401AD8A02B000DC153 /* Main.storyboard */ = {
+		97CE2A7B1AE032D9003EF3AA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E48416411AD8A02B000DC153 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E48416451AD8A02B000DC153 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E48416461AD8A02B000DC153 /* Base */,
+				97CE2A7C1AE032D9003EF3AA /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		97CE2A7D1AE032D9003EF3AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97CE2A7E1AE032D9003EF3AA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -303,13 +294,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "ios-sdk-example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/chrisk/source/ios-sdk",
+					"/Users/chrisk/source/ios-sdk/keyutils/libs",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ios-sdk-example-ios";
 			};
 			name = Debug;
 		};
@@ -321,20 +313,21 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "ios-sdk-example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/chrisk/source/ios-sdk",
+					"/Users/chrisk/source/ios-sdk/keyutils/libs",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ios-sdk-example-ios";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-sdk-example" */ = {
+		E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-example-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E48416541AD8A02B000DC153 /* Debug */,
@@ -343,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example" */ = {
+		E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E48416571AD8A02B000DC153 /* Debug */,

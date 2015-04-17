@@ -7,27 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97D779011ADEB0B0005D7B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D779001ADEB0B0005D7B4C /* AppDelegate.swift */; };
-		97D779031ADEB0B0005D7B4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D779021ADEB0B0005D7B4C /* ViewController.swift */; };
-		97D779061ADEB0B0005D7B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D779041ADEB0B0005D7B4C /* Main.storyboard */; };
-		97D779081ADEB0B0005D7B4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D779071ADEB0B0005D7B4C /* Images.xcassets */; };
-		97D7790B1ADEB0B0005D7B4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D779091ADEB0B0005D7B4C /* LaunchScreen.xib */; };
-		97D779221ADEB147005D7B4C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D779211ADEB147005D7B4C /* libcrypto.a */; };
-		97D779241ADEB158005D7B4C /* libios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D779231ADEB158005D7B4C /* libios-sdk.a */; };
+		97CE2A5E1AE02E73003EF3AA /* libkeyutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A5D1AE02E73003EF3AA /* libkeyutils.a */; };
+		97CE2A601AE02EBE003EF3AA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A5F1AE02EBE003EF3AA /* libcrypto.a */; };
+		97CE2A6A1AE02F34003EF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A611AE02F34003EF3AA /* AppDelegate.swift */; };
+		97CE2A6B1AE02F34003EF3AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A631AE02F34003EF3AA /* LaunchScreen.xib */; };
+		97CE2A6C1AE02F34003EF3AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A651AE02F34003EF3AA /* Main.storyboard */; };
+		97CE2A6D1AE02F34003EF3AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A671AE02F34003EF3AA /* Images.xcassets */; };
+		97CE2A6E1AE02F34003EF3AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A691AE02F34003EF3AA /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97CE2A5D1AE02E73003EF3AA /* libkeyutils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkeyutils.a; path = "../../keyutils/build/Debug-iphoneos/libkeyutils.a"; sourceTree = "<group>"; };
+		97CE2A5F1AE02EBE003EF3AA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../keyutils/libs/libcrypto.a; sourceTree = "<group>"; };
+		97CE2A611AE02F34003EF3AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		97CE2A641AE02F34003EF3AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		97CE2A661AE02F34003EF3AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		97CE2A671AE02F34003EF3AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
+		97CE2A681AE02F34003EF3AA /* Ios-sdk-example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Ios-sdk-example-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		97CE2A691AE02F34003EF3AA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
 		97D778FB1ADEB0B0005D7B4C /* ios-sdk-example-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D778FF1ADEB0B0005D7B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97D779001ADEB0B0005D7B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97D779021ADEB0B0005D7B4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		97D779051ADEB0B0005D7B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		97D779071ADEB0B0005D7B4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		97D7790A1ADEB0B0005D7B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		97D779211ADEB147005D7B4C /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../libcrypto.a; sourceTree = "<group>"; };
-		97D779231ADEB158005D7B4C /* libios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libios-sdk.a"; path = "../build/Debug-iphoneos/libios-sdk.a"; sourceTree = "<group>"; };
-		97D779251ADEB1CB005D7B4C /* Ios-sdk-example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ios-sdk-example-Bridging-Header.h"; sourceTree = "<group>"; };
-		97D779261ADEB2D0005D7B4C /* keyutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = keyutils.h; path = ../keyutils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,19 +34,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D779241ADEB158005D7B4C /* libios-sdk.a in Frameworks */,
-				97D779221ADEB147005D7B4C /* libcrypto.a in Frameworks */,
+				97CE2A601AE02EBE003EF3AA /* libcrypto.a in Frameworks */,
+				97CE2A5E1AE02E73003EF3AA /* libkeyutils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97CE2A621AE02F34003EF3AA /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A631AE02F34003EF3AA /* LaunchScreen.xib */,
+				97CE2A651AE02F34003EF3AA /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
 		97D778F21ADEB0B0005D7B4C = {
 			isa = PBXGroup;
 			children = (
-				97D779261ADEB2D0005D7B4C /* keyutils.h */,
-				97D779231ADEB158005D7B4C /* libios-sdk.a */,
 				97D779201ADEB11A005D7B4C /* libs */,
 				97D778FD1ADEB0B0005D7B4C /* ios-example-swift */,
 				97D778FC1ADEB0B0005D7B4C /* Products */,
@@ -65,12 +71,11 @@
 		97D778FD1ADEB0B0005D7B4C /* ios-example-swift */ = {
 			isa = PBXGroup;
 			children = (
-				97D779001ADEB0B0005D7B4C /* AppDelegate.swift */,
-				97D779021ADEB0B0005D7B4C /* ViewController.swift */,
-				97D779251ADEB1CB005D7B4C /* Ios-sdk-example-Bridging-Header.h */,
-				97D779041ADEB0B0005D7B4C /* Main.storyboard */,
-				97D779071ADEB0B0005D7B4C /* Images.xcassets */,
-				97D779091ADEB0B0005D7B4C /* LaunchScreen.xib */,
+				97CE2A611AE02F34003EF3AA /* AppDelegate.swift */,
+				97CE2A621AE02F34003EF3AA /* Base.lproj */,
+				97CE2A671AE02F34003EF3AA /* Images.xcassets */,
+				97CE2A681AE02F34003EF3AA /* Ios-sdk-example-Bridging-Header.h */,
+				97CE2A691AE02F34003EF3AA /* ViewController.swift */,
 				97D778FE1ADEB0B0005D7B4C /* Supporting Files */,
 			);
 			path = "ios-example-swift";
@@ -87,7 +92,8 @@
 		97D779201ADEB11A005D7B4C /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				97D779211ADEB147005D7B4C /* libcrypto.a */,
+				97CE2A5D1AE02E73003EF3AA /* libkeyutils.a */,
+				97CE2A5F1AE02EBE003EF3AA /* libcrypto.a */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -149,9 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D779061ADEB0B0005D7B4C /* Main.storyboard in Resources */,
-				97D7790B1ADEB0B0005D7B4C /* LaunchScreen.xib in Resources */,
-				97D779081ADEB0B0005D7B4C /* Images.xcassets in Resources */,
+				97CE2A6D1AE02F34003EF3AA /* Images.xcassets in Resources */,
+				97CE2A6B1AE02F34003EF3AA /* LaunchScreen.xib in Resources */,
+				97CE2A6C1AE02F34003EF3AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,28 +168,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D779031ADEB0B0005D7B4C /* ViewController.swift in Sources */,
-				97D779011ADEB0B0005D7B4C /* AppDelegate.swift in Sources */,
+				97CE2A6E1AE02F34003EF3AA /* ViewController.swift in Sources */,
+				97CE2A6A1AE02F34003EF3AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		97D779041ADEB0B0005D7B4C /* Main.storyboard */ = {
+		97CE2A631AE02F34003EF3AA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				97D779051ADEB0B0005D7B4C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		97D779091ADEB0B0005D7B4C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97D7790A1ADEB0B0005D7B4C /* Base */,
+				97CE2A641AE02F34003EF3AA /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		97CE2A651AE02F34003EF3AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97CE2A661AE02F34003EF3AA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -277,13 +283,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "ios-example-swift/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/chrisk/source/ios-sdk",
+					"/Users/chrisk/source/ios-sdk/keyutils/libs",
 				);
 				PRODUCT_NAME = "ios-sdk-example-swift";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Ios-sdk-example-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -291,11 +299,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "ios-example-swift/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/chrisk/source/ios-sdk",
+					"/Users/chrisk/source/ios-sdk/keyutils/libs",
 				);
 				PRODUCT_NAME = "ios-sdk-example-swift";
 			};
@@ -320,6 +329,7 @@
 				97D7791C1ADEB0B0005D7B4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

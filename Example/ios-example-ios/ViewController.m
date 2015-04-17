@@ -86,8 +86,8 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@/invoices", bitpayUrl]]];
     
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-    [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
     [request addValue:@"2.0.0" forHTTPHeaderField:@"x-accept-version"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"accept"];
     [request addValue:pubKey forHTTPHeaderField:@"x-identity"];
     [request addValue:_signedMessage forHTTPHeaderField:@"x-signature"];
     [request setHTTPMethod:@"POST"];

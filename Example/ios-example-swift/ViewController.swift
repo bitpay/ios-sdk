@@ -85,9 +85,9 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
         var bodyData = (postString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         
         request.HTTPBody = bodyData
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
         request.addValue("2.0.0", forHTTPHeaderField: "x-accept-version")
         request.addValue(pubkey, forHTTPHeaderField: "x-identity")
+        request.addValue("application/json", forHTTPHeaderField: "accept")
         request.addValue(signedMessage, forHTTPHeaderField: "x-signature")
         request.HTTPMethod = "POST"
         

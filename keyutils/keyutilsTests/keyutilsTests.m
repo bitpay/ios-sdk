@@ -1,13 +1,14 @@
 //
-//  keyutils.m
+//  keyutilsTests.m
+//  keyutilsTests
 //
-//  Created by Chris Kleeschulte on 4/7/15.
-//  Copyright (c) 2015 BitPay. All rights reserved.
+//  Created by chrisk on 4/16/15.
+//  Copyright (c) 2015 bitpay. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "keyutils.h"
-
 
 @interface KeyUtilsTests : XCTestCase
 @end
@@ -19,7 +20,7 @@
     NSString *desired = @"^-----BEGIN EC PRIVATE KEY-----\nMHQC";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:desired options:0 error:nil];
     NSRange range = [regex rangeOfFirstMatchInString:pem options:NSMatchingAnchored
-                                                     range:NSMakeRange(0, pem.length)];
+                                               range:NSMakeRange(0, pem.length)];
     XCTAssertEqual(desired.length - 1, range.length);
     
 }
@@ -49,7 +50,7 @@
     NSString *pem = @"-----BEGIN EC PRIVATE KEY-----\nMHQCAQEEIKy0/RaYLTD3isDivZUuqPNNsDnbqAMRrneqlq839nbloAcGBSuBBAAK\noUQDQgAEECPSfkDyOnrniCcXdMHILAHKVM/V08Out87Rx66pvIK+oB90k5DPvr6l\n3tVKTyBA97qTU1tN5nl7RXe8Eseb7g==\n-----END EC PRIVATE KEY-----\n";
     NSString *message = @"https://test.bitpay.com/invoices{\"currency\":\"USD\",\"price\":20,\"token\":\"WNtT61hp29VBs98rFG3u6w\"}";
     NSString *signedMessage = [BPKeyUtils sign: message withPem: pem];
-
+    
     NSError *error = NULL;
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern:@"^[a-f0-9]+$"

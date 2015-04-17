@@ -2,12 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ios-example-swift/ios-sdk-example-swift.xcodeproj">
+      location = "group:keyutils/keyutils.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Example/ios-sdk-example.xcodeproj">
+      location = "group:Example/ios-example-swift/ios-sdk-example-swift.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:ios-sdk.xcodeproj">
+      location = "group:Example/ios-example-ios/ios-example-ios.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:client/client.xcodeproj">
    </FileRef>
 </Workspace>
