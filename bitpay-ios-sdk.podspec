@@ -43,4 +43,5 @@ s.requires_arc = true
 s.public_header_files = "*.h"
 s.source_files = 'keyutils.{h,m}'
 s.vendored_frameworks = 'openssl.framework'
+s.vendored_libraries = 'libcrypto.a'
 end
