@@ -10,3 +10,4 @@
 #import "constants.h"
 
 NSString * const BITPAY_HOST = @"https://bitpay.com";
+NSString * const TEST_BITPAY_HOST = @"https://test.bitpay.com";

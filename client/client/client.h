@@ -8,17 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "constants.h"
-#import "keyutils/keyutils.h"
+#import "keyutils.h"
+#import "NSString+urlEncode.h"
 
 typedef enum {
     POS, MERCHANT
 } facade;
 
+typedef enum {
+    PAIRING, TOKEN
+} codeType;
+
 @interface BPBitPay : NSObject
-
 @property NSString *name;
-
-- (id) initWithName: (NSString *)name;
-- (NSString *) requestClientAuthorizationWithFacade: (facade)type error: (NSError * __autoreleasing *) error;
-
+@property NSString *pem;
+@property NSString *sin;
+- (id) initWithName: (NSString *)name pem: (NSString *)pem;
+- (NSString *) requestClientAuthorizationWithFacade: (facade)type error: (NSError **)error;
+- (NSString *) authorizeClient: (NSString *)pairingCode error: (NSError **)error;
 @end
