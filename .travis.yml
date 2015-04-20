@@ -1,4 +1,4 @@
 language: objective-c
-xcode_project: ios-sdk.xcodeproj
-xcode_scheme: ios-sdk
+xcode_project: keyutils/keyutils.xcodeproj
+xcode_scheme: keyutils 
 xcode_sdk: iphonesimulator
