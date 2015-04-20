@@ -45,6 +45,7 @@
     
     NSString *expected = @"my name";
     BPBitPay *bp = [[BPBitPay alloc] initWithName:expected pem:[BPKeyUtils generatePem]];
+    XCTAssertNotNil(self.bp);
     NSString *actual = [bp name];
     XCTAssertEqual(actual, expected);
     

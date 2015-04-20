@@ -8,7 +8,7 @@
 
 #import "client.h"
 
-
+//TODO make the synchronuous calls take a completion block and making them asynchronuous (or call a delegate method)
 @implementation BPBitPay
 
 
@@ -77,7 +77,7 @@
             code = @"pairingCode";
             break;
         case 1:
-            code = @"facade";
+            code = @"token";
             break;
     }
     
@@ -146,7 +146,7 @@
 - (NSString *) parseResult: (NSData *)data for: (NSString *)code error: (NSError **)error {
     
     NSError *parseError = nil;
-    NSString *result;
+    NSString *result = nil;
     
     id object = [NSJSONSerialization
                  JSONObjectWithData:data
@@ -165,7 +165,19 @@
             
             NSDictionary *mainDictionary = dataMember[0];
             result = [mainDictionary valueForKeyPath:code];
+        }
     }
+    
+    if(!result) {
+        
+        //this means we got some kind of JSON data, just not what we were expecting
+        NSDictionary *userInfo = @{
+                                   NSLocalizedDescriptionKey: NSLocalizedString(@"Could not find information", nil),
+                                   NSLocalizedFailureReasonErrorKey: NSLocalizedString([object description], nil),
+                                   };
+
+        *error = [NSError errorWithDomain: NSCocoaErrorDomain code: 0 userInfo:userInfo];
+        
     }
     
     return result;
