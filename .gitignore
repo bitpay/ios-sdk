@@ -3,6 +3,5 @@
 src
 build
 **/xcuserdata
-**/xcshareddata
 **/Pods
 **/Podfile.lock
