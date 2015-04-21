@@ -33,7 +33,7 @@
     NSString *pem = [BPKeyUtils generatePem];
     self.bp = [[BPBitPay alloc] initWithName:@"some bp object" pem: pem];
     self.bp.sin = [BPKeyUtils generateSinFromPem:self.bp.pem];
-    self.host = TEST_BITPAY_HOST;
+    self.bp.host = TEST_BITPAY_HOST;
 }
 
 - (void)tearDown {
@@ -57,9 +57,9 @@
     
     NSString *jsonResults = @"{\"data\":[{\"pairingCode\":\"ABC1234\"}]}";
     NSData *results = [jsonResults dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin];
     
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andReturn(201)
@@ -79,9 +79,9 @@
     
     NSError *error = nil;
     
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin];
 
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andReturn(500);
@@ -99,9 +99,9 @@
     
     NSString *jsonResults = @"some bad string";
     NSData *results = [jsonResults dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin];
     
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andReturn(201)
@@ -116,9 +116,9 @@
 - (void) testNetworkNotAvailableFailureRequestClientAuthorization {
     
     NSError *error = nil;
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=ClientAuth&facade=merchant", self.bp.sin];
 
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);
@@ -137,9 +137,9 @@
     
     NSString *jsonResults = @"{\"data\":[{\"token\":\"ABC1234567890\"}]}";
     NSData *results = [jsonResults dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin];
     
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andReturn(201)
@@ -158,9 +158,9 @@
     
     NSError *error = nil;
     
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin];
     
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andReturn(500);
@@ -180,9 +180,9 @@
     
     NSString *jsonResults = @"some bad string";
     NSData *results = [jsonResults dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin];
     
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andReturn(201)
@@ -198,9 +198,9 @@
 - (void) testNetworkNotAvailableAuthorizeClient {
 
     NSError *error = nil;
-    NSString *body = [[NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin] urlEncode];
+    NSString *body = [NSString stringWithFormat: @"id=%@&label=AuthClient&pairingCode=ABC1234", self.bp.sin];
     
-    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.host])
+    stubRequest(@"POST", [NSString stringWithFormat: @"%@/tokens", self.bp.host])
     .withHeader(@"accept", @"application/json")
     .withBody([body dataUsingEncoding:NSUTF8StringEncoding])
     .andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);

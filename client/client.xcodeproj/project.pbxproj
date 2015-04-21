@@ -11,6 +11,7 @@
 		97519C831AE196EC00A44F1D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97519C821AE196EC00A44F1D /* libcrypto.a */; };
 		97519C8A1AE1B0EF00A44F1D /* NSString+urlEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 97519C891AE1B0EF00A44F1D /* NSString+urlEncode.m */; };
 		975FC3871AE175F6002750D7 /* libclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975FC37B1AE175F6002750D7 /* libclient.a */; };
+		97644B921AE576180022527C /* clientTestsFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 97644B911AE576180022527C /* clientTestsFunctional.m */; };
 		97D463851AE1768300302554 /* clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D463841AE1768300302554 /* clientTests.m */; };
 		97D4638A1AE176E800302554 /* client.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D463871AE176E800302554 /* client.m */; };
 		97D4638B1AE176E800302554 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D463891AE176E800302554 /* constants.m */; };
@@ -48,6 +49,8 @@
 		975FC37B1AE175F6002750D7 /* libclient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libclient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		975FC3861AE175F6002750D7 /* clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		975FC38C1AE175F6002750D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97644B911AE576180022527C /* clientTestsFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = clientTestsFunctional.m; sourceTree = "<group>"; };
+		97644B941AE581760022527C /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		97D463841AE1768300302554 /* clientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = clientTests.m; sourceTree = "<group>"; };
 		97D463861AE176E800302554 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		97D463871AE176E800302554 /* client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = client.m; sourceTree = "<group>"; };
@@ -139,7 +142,9 @@
 		975FC38A1AE175F6002750D7 /* clientTests */ = {
 			isa = PBXGroup;
 			children = (
-				97D463841AE1768300302554 /* clientTests.m */,
+				97644B931AE581550022527C /* fixtures */,
+				97644B901AE575DF0022527C /* functional */,
+				97644B8F1AE575D90022527C /* unit */,
 				975FC38B1AE175F6002750D7 /* Supporting Files */,
 			);
 			path = clientTests;
@@ -151,6 +156,30 @@
 				975FC38C1AE175F6002750D7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		97644B8F1AE575D90022527C /* unit */ = {
+			isa = PBXGroup;
+			children = (
+				97D463841AE1768300302554 /* clientTests.m */,
+			);
+			name = unit;
+			sourceTree = "<group>";
+		};
+		97644B901AE575DF0022527C /* functional */ = {
+			isa = PBXGroup;
+			children = (
+				97644B911AE576180022527C /* clientTestsFunctional.m */,
+			);
+			name = functional;
+			sourceTree = "<group>";
+		};
+		97644B931AE581550022527C /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				97644B941AE581760022527C /* constants.h */,
+			);
+			name = fixtures;
 			sourceTree = "<group>";
 		};
 		D98ED73400042380AF44D777 /* Pods */ = {
@@ -330,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97D463851AE1768300302554 /* clientTests.m in Sources */,
+				97644B921AE576180022527C /* clientTestsFunctional.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

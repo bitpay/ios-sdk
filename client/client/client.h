@@ -23,6 +23,7 @@ typedef enum {
 @property NSString *name;
 @property NSString *pem;
 @property NSString *sin;
+@property (nonatomic, retain, getter = getHost) NSString *host;
 - (id) initWithName: (NSString *)name pem: (NSString *)pem;
 - (NSString *) requestClientAuthorizationWithFacade: (facade)type error: (NSError **)error;
 - (NSString *) authorizeClient: (NSString *)pairingCode error: (NSError **)error;

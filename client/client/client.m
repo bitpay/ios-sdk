@@ -105,7 +105,7 @@
 
 - (NSMutableURLRequest *) buildRequestWithString: (NSString *)string {
 
-    NSString *urlString = [NSString stringWithFormat:@"%@/tokens", TEST_BITPAY_HOST];
+    NSString *urlString = [NSString stringWithFormat:@"%@/tokens", [self getHost]];
     NSURL *url = [NSURL URLWithString:urlString];
     return [self populateRequest:[[NSMutableURLRequest alloc] initWithURL: url] withString:string];
     
@@ -115,7 +115,7 @@
 
     [request setHTTPMethod:@"POST"];
     [request addValue:@"application/json" forHTTPHeaderField:@"accept"];
-    [request setHTTPBody:[[string urlEncode] dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:[string dataUsingEncoding:NSUTF8StringEncoding]];
     return request;
 
 }
@@ -126,7 +126,7 @@
     NSError *apiError = nil;
     
     NSData *result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&apiError];
-    
+
     if(apiError) {
         *error = [NSError errorWithDomain: [apiError domain] code: [apiError code] userInfo:nil];
         return nil;
@@ -181,6 +181,12 @@
     }
     
     return result;
+    
+}
+
+- (NSString *) getHost {
+    
+    return _host == nil ? BITPAY_HOST : _host;
     
 }
 
