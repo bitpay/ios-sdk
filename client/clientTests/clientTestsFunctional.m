@@ -75,6 +75,20 @@
     NSLog(@"%ld", [error code]);
 }
 
+- (void) testThatPairingCodeIsBadFormat {
+
+    NSError *error = nil;
+    
+    [self.bp authorizeClient: @"$%ABC12" error: &error];
+    XCTAssertNotNil(error, "Error was supposed be NOT nil, but was nil anyway.");
+    XCTAssertTrue([error code] == NSFormattingError);
+    
+    [self.bp authorizeClient: @"123456" error: &error];
+    XCTAssertNotNil(error, "Error was supposed be NOT nil, but was nil anyway.");
+    XCTAssertTrue([error code] == NSFormattingError);
+
+}
+
 - (void) testHasBadPairingCode {
     
     NSError *error = nil;

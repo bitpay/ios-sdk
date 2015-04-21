@@ -52,6 +52,12 @@
 
 - (NSString *)authorizeClient:(NSString *)pairingCode error: (NSError **)error{
     
+    
+    if(![self isValidPairingCode: pairingCode]) {
+        *error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFormattingError userInfo:nil];
+        return nil;
+    }
+    
     NSError *apiError = nil;
     
     NSString *bodyData = [NSString stringWithFormat:@"id=%@&label=AuthClient&pairingCode=%@", _sin, pairingCode];
@@ -68,6 +74,17 @@
 
 
 #pragma mark privates
+- (BOOL) isValidPairingCode: (NSString *)pairingCode {
+
+    if([pairingCode length] != 7) {
+        return NO;
+    }
+    
+    NSCharacterSet *alphaSet = [NSCharacterSet alphanumericCharacterSet];
+    return [[pairingCode stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
+    
+}
+
 - (NSString *)getCode: (codeType)type withBodyData: (NSString *)bodyData error: (NSError **)error {
     
     NSString *code;
