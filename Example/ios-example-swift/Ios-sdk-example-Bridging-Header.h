@@ -9,6 +9,7 @@
 #ifndef ios_sdk_example_swift_Ios_sdk_example_Bridging_Header_h
 #define ios_sdk_example_swift_Ios_sdk_example_Bridging_Header_h
 
-#import "ios-sdk/keyutils.h"
+#import "keyutils.h"
+#import "client.h"
 
 #endif

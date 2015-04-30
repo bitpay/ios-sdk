@@ -20,10 +20,11 @@
 @implementation ViewController
 
 NSString *genericErrorMessage = @"There was an error from the api";
-NSString const *bitpayUrl = @"https://test.bitpay.com";
+NSString *bitpayUrl = @"https://test.bitpay.com";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _pairText.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,14 +55,21 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
         
         NSLog(@"pairingCode: %@", _pairText.text);
         
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@/tokens", bitpayUrl]]];
+        BPBitPay *bp = [[BPBitPay alloc] initWithName:@"BitPay" pem: _key];
+        bp.host = bitpayUrl;
         
-        NSString *postString = [NSString stringWithFormat:@"id=%@&label=Test&pairingCode=%@", _sin, _pairText.text];
-
-        [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-        [request setHTTPMethod:@"POST"];
+        NSError *error = nil;
+        NSString *token = [bp authorizeClient:_pairText.text error: &error];
         
-        [NSURLConnection connectionWithRequest:request delegate:self];
+        if(error) {
+            NSLog(@"%@", @"there was an error");
+            _tokenText.text = @"there was an error";
+            return;
+        }
+        
+        _token = token;
+        _tokenText.text = token;
+        
     }
     
 }
@@ -87,14 +95,22 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
     
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     [request addValue:@"2.0.0" forHTTPHeaderField:@"x-accept-version"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"accept"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
     [request addValue:pubKey forHTTPHeaderField:@"x-identity"];
     [request addValue:_signedMessage forHTTPHeaderField:@"x-signature"];
     [request setHTTPMethod:@"POST"];
     
     [NSURLConnection connectionWithRequest:request delegate:self];
-    
+
 }
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 
 #pragma mark NSURLConnection Delegate Methods
 
@@ -157,5 +173,7 @@ NSString const *bitpayUrl = @"https://test.bitpay.com";
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"there was an error.");
 }
+
+
 
 @end

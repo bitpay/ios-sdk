@@ -19,13 +19,13 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
     var pem = ""
     var key = ""
     var sin = ""
-    var token = "";
-    var invoice = "";
+    var token = ""
+    var invoice = ""
     var data = NSMutableData.new()
     
     @IBAction func generateKey(sender: AnyObject) {
         pem = BPKeyUtils.generatePem()
-        pemText.text = pem;
+        pemText.text = pem
     }
     
     
@@ -41,21 +41,28 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
             return
         }
 
-        data = NSMutableData.new()
-        
+        data.setData(NSData())
+
         NSLog("pairingCode: \(pairingText.text)")
         
-        var url = NSURL(string: "https://test.bitpay.com/tokens")
-        var request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "POST"
+        let bp = BPBitPay(name: "BitPay", pem: pem)
         
-        var postString = "id=\(sin)&label=Test&pairingCode=\(pairingText.text)"
-        let bodyData = (postString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        bp.host = "https://test.bitpay.com"
         
-        request.HTTPBody = bodyData
-
-        var connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
-        connection?.start()
+        var apiError: NSError?
+        var pairingCode = pairingText.text as String
+        let token = bp.authorizeClient(pairingCode, error: &apiError)
+        
+        if token == nil {
+            if let error = apiError {
+                NSLog("api error")
+                tokenText.text = "api error"
+            }
+        } else {
+            self.token = token
+            tokenText.text = token
+        }
+    
     }
     
     
@@ -66,7 +73,7 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
             return
         }
         
-        data = NSMutableData.new()
+        data.setData(NSData())
         
         var url = NSURL(string: "https://test.bitpay.com/invoices")
         var request = NSMutableURLRequest(URL: url!)
@@ -78,7 +85,7 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
         
         var postString = "{\"currency\":\"USD\",\"price\":20,\"token\":\"\(token)\"}"
         
-        var message = "https://test.bitpay.com/invoices\(postString)";
+        var message = "https://test.bitpay.com/invoices\(postString)"
         
         var signedMessage = BPKeyUtils.sign(message, withPem: pem)
 
@@ -87,7 +94,7 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
         request.HTTPBody = bodyData
         request.addValue("2.0.0", forHTTPHeaderField: "x-accept-version")
         request.addValue(pubkey, forHTTPHeaderField: "x-identity")
-        request.addValue("application/json", forHTTPHeaderField: "accept")
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
         request.addValue(signedMessage, forHTTPHeaderField: "x-signature")
         request.HTTPMethod = "POST"
         
@@ -106,7 +113,7 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pairingText.delegate = self;
+        self.pairingText.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

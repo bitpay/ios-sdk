@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97CE2A701AE0308E003EF3AA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A6F1AE0308E003EF3AA /* libcrypto.a */; };
-		97CE2A721AE030B1003EF3AA /* libkeyutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A711AE030B1003EF3AA /* libkeyutils.a */; };
+		64138C8C7627CCA55B506A2F /* libPods-ios-sdk-example-objective-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3934A9A736A765B7C6DA2229 /* libPods-ios-sdk-example-objective-c.a */; };
 		97CE2A821AE032D9003EF3AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A791AE032D9003EF3AA /* AppDelegate.m */; };
 		97CE2A831AE032D9003EF3AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A7B1AE032D9003EF3AA /* LaunchScreen.xib */; };
 		97CE2A841AE032D9003EF3AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A7D1AE032D9003EF3AA /* Main.storyboard */; };
@@ -18,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		97CE2A6F1AE0308E003EF3AA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../keyutils/libs/libcrypto.a; sourceTree = "<group>"; };
-		97CE2A711AE030B1003EF3AA /* libkeyutils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkeyutils.a; path = "../../keyutils/build/Debug-iphoneos/libkeyutils.a"; sourceTree = "<group>"; };
+		02F4AF0D0BC01A570B071D0B /* Pods-ios-sdk-example-objective-c.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk-example-objective-c.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-sdk-example-objective-c/Pods-ios-sdk-example-objective-c.debug.xcconfig"; sourceTree = "<group>"; };
+		3934A9A736A765B7C6DA2229 /* libPods-ios-sdk-example-objective-c.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-sdk-example-objective-c.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CE2A781AE032D9003EF3AA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		97CE2A791AE032D9003EF3AA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		97CE2A7C1AE032D9003EF3AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		97CE2A871AE03340003EF3AA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		97CE2A891AE033B4003EF3AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		E48416331AD8A02B000DC153 /* ios-sdk-example-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BC764C13384572C0CC543D /* Pods-ios-sdk-example-objective-c.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk-example-objective-c.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-sdk-example-objective-c/Pods-ios-sdk-example-objective-c.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,19 +37,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97CE2A721AE030B1003EF3AA /* libkeyutils.a in Frameworks */,
-				97CE2A701AE0308E003EF3AA /* libcrypto.a in Frameworks */,
+				64138C8C7627CCA55B506A2F /* libPods-ios-sdk-example-objective-c.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84879B1FAE11FCD845719F26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02F4AF0D0BC01A570B071D0B /* Pods-ios-sdk-example-objective-c.debug.xcconfig */,
+				E8BC764C13384572C0CC543D /* Pods-ios-sdk-example-objective-c.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		97B917C01ADC02F300B93AB1 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				97CE2A711AE030B1003EF3AA /* libkeyutils.a */,
-				97CE2A6F1AE0308E003EF3AA /* libcrypto.a */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -67,8 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				97B917C01ADC02F300B93AB1 /* libs */,
-				E48416351AD8A02B000DC153 /* ios-example-ios */,
+				E48416351AD8A02B000DC153 /* ios-sdk-example-objective-c */,
 				E48416341AD8A02B000DC153 /* Products */,
+				84879B1FAE11FCD845719F26 /* Pods */,
+				E5201A865A4AD960821CFB00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,7 +88,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E48416351AD8A02B000DC153 /* ios-example-ios */ = {
+		E48416351AD8A02B000DC153 /* ios-sdk-example-objective-c */ = {
 			isa = PBXGroup;
 			children = (
 				97CE2A781AE032D9003EF3AA /* AppDelegate.h */,
@@ -91,7 +99,7 @@
 				97CE2A811AE032D9003EF3AA /* ViewController.m */,
 				E48416361AD8A02B000DC153 /* Supporting Files */,
 			);
-			name = "ios-example-ios";
+			name = "ios-sdk-example-objective-c";
 			path = "ios-sdk-example";
 			sourceTree = "<group>";
 		};
@@ -104,22 +112,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E5201A865A4AD960821CFB00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3934A9A736A765B7C6DA2229 /* libPods-ios-sdk-example-objective-c.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E48416321AD8A02B000DC153 /* ios-sdk-example-ios */ = {
+		E48416321AD8A02B000DC153 /* ios-sdk-example-objective-c */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example-ios" */;
+			buildConfigurationList = E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example-objective-c" */;
 			buildPhases = (
+				B1C919837956D155338F029B /* Check Pods Manifest.lock */,
 				E484162F1AD8A02B000DC153 /* Sources */,
 				E48416301AD8A02B000DC153 /* Frameworks */,
 				E48416311AD8A02B000DC153 /* Resources */,
+				F14A152C364077D375E0F0DA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "ios-sdk-example-ios";
+			name = "ios-sdk-example-objective-c";
 			productName = "ios-sdk-example";
 			productReference = E48416331AD8A02B000DC153 /* ios-sdk-example-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -138,7 +156,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-example-ios" */;
+			buildConfigurationList = E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-sdk-example-objective-c" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -151,7 +169,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E48416321AD8A02B000DC153 /* ios-sdk-example-ios */,
+				E48416321AD8A02B000DC153 /* ios-sdk-example-objective-c */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +186,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1C919837956D155338F029B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F14A152C364077D375E0F0DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-sdk-example-objective-c/Pods-ios-sdk-example-objective-c-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E484162F1AD8A02B000DC153 /* Sources */ = {
@@ -288,6 +339,7 @@
 		};
 		E48416571AD8A02B000DC153 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02F4AF0D0BC01A570B071D0B /* Pods-ios-sdk-example-objective-c.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
@@ -307,6 +359,7 @@
 		};
 		E48416581AD8A02B000DC153 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8BC764C13384572C0CC543D /* Pods-ios-sdk-example-objective-c.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
@@ -327,7 +380,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-example-ios" */ = {
+		E484162E1AD8A02B000DC153 /* Build configuration list for PBXProject "ios-sdk-example-objective-c" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E48416541AD8A02B000DC153 /* Debug */,
@@ -336,7 +389,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example-ios" */ = {
+		E48416561AD8A02B000DC153 /* Build configuration list for PBXNativeTarget "ios-sdk-example-objective-c" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E48416571AD8A02B000DC153 /* Debug */,

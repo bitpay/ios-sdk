@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ios-sdk/keyutils.h"
+#import "keyutils.h"
+#import "client.h"
 
-@interface ViewController : UIViewController<NSURLConnectionDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 - (IBAction)generateKeys:(id)sender;
 - (IBAction)generateSin:(id)sender;

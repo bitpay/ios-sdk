@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "constants.h"
 #import "keyutils.h"
-#import "NSString+urlEncode.h"
 
 typedef enum {
     POS, MERCHANT
