@@ -7,4 +7,4 @@
 //
 
 
-NSString * const PAIRING_CODE = @"someparingcode";
+NSString * const PAIRING_CODE = @"LLWkSna";

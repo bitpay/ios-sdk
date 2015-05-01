@@ -12,20 +12,24 @@
 	<dict>
 		<key>897EF4E549C6630BA3624196A05FC652861D12AA</key>
 		<string>github.com:kleetus/bitpay_ios_sdk.git</string>
+		<key>AAD89F837BF860319F97F1158EE05886D4FDC1A3</key>
+		<string>github.com:kleetus/bitpay-ios-client.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>client/client.xcworkspace</string>
+	<string>client.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>897EF4E549C6630BA3624196A05FC652861D12AA</key>
 		<string>../..</string>
+		<key>AAD89F837BF860319F97F1158EE05886D4FDC1A3</key>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:kleetus/bitpay_ios_sdk.git</string>
+	<string>github.com:kleetus/bitpay-ios-client.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>897EF4E549C6630BA3624196A05FC652861D12AA</string>
+	<string>AAD89F837BF860319F97F1158EE05886D4FDC1A3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>897EF4E549C6630BA3624196A05FC652861D12AA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ios-sdk</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AAD89F837BF860319F97F1158EE05886D4FDC1A3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>client</string>
 		</dict>
 	</array>
 </dict>

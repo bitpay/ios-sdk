@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B93CA977F4D1EC6D117CEC5 /* libPods-client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63980E1FEC6E183F6BBA6036 /* libPods-client.a */; };
 		97519C831AE196EC00A44F1D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97519C821AE196EC00A44F1D /* libcrypto.a */; };
-		97519C8A1AE1B0EF00A44F1D /* NSString+urlEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 97519C891AE1B0EF00A44F1D /* NSString+urlEncode.m */; };
 		975FC3871AE175F6002750D7 /* libclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975FC37B1AE175F6002750D7 /* libclient.a */; };
 		97644B921AE576180022527C /* clientTestsFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 97644B911AE576180022527C /* clientTestsFunctional.m */; };
 		97A217961AF17708009920DF /* client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 97D463861AE176E800302554 /* client.h */; };
@@ -350,7 +349,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97519C8A1AE1B0EF00A44F1D /* NSString+urlEncode.m in Sources */,
 				97D4638A1AE176E800302554 /* client.m in Sources */,
 				97D4638B1AE176E800302554 /* constants.m in Sources */,
 			);
