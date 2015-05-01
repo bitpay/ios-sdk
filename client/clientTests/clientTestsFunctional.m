@@ -51,21 +51,19 @@
 }
 
 - (void) testHasCorrectPairingCode {
-    
-    //this test is rate-limited by test.bitpay.com
     NSError *error = nil;
-    
     NSString *token = [self.bp authorizeClient:PAIRING_CODE error: &error];
     NSLog(@"token is: %@", token);
     XCTAssertNil(error, "Error is supposed to be nil, but was not");
-    
 }
 
-- (void) testInitiatesPairing {
+- (void) testInitiatesPairingTest {
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(InitiatesPairingTest) userInfo:nil repeats:NO];
+}
+
+- (void) InitiatesPairingTest {
     
-    //this test is rate-limited by test.bitpay.com
     NSError *error = nil;
-    
     NSString *pairingCode = [self.bp requestClientAuthorizationWithFacade: POS error: &error];
     NSLog(@"pairingCode is: %@", pairingCode);
     int actual = (int)[pairingCode length];
@@ -78,7 +76,6 @@
 - (void) testThatPairingCodeIsBadFormat {
 
     NSError *error = nil;
-    
     [self.bp authorizeClient: @"$%ABC12" error: &error];
     XCTAssertNotNil(error, "Error was supposed be NOT nil, but was nil anyway.");
     XCTAssertTrue([error code] == NSFormattingError);
