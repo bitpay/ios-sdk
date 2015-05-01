@@ -94,7 +94,7 @@
     NSError *error = nil;
     NSString *token = [self.bp authorizeClient:@"a1b2c3d4" error: &error];
     XCTAssertNotNil(error, @"Error is supposed to be nil, but was nil anyway");
-    XCTAssertEqual([error code], NSURLErrorBadServerResponse); //this is a non-200 level response
+    XCTAssertEqual([error code], 2048); //this is a non-200 level response
     XCTAssertNil(token);
     
 }
