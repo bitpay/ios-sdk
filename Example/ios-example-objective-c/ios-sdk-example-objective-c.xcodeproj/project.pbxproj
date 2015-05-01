@@ -348,11 +348,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/chrisk/source/ios-sdk",
-					"/Users/chrisk/source/ios-sdk/keyutils/libs",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "ios-sdk-example-ios";
 			};
 			name = Debug;
@@ -368,11 +364,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/chrisk/source/ios-sdk",
-					"/Users/chrisk/source/ios-sdk/keyutils/libs",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "ios-sdk-example-ios";
 			};
 			name = Release;

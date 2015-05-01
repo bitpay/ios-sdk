@@ -6,6 +6,8 @@ You must have BitPay or test.bitpay merchant account to use this library. [Signi
 or [Signing up for a test merchant account](https://test.bitpay.com/start) 
 is free.
 
+You must have Xcode 6.3.1 or above to be able to take advantage of the Swift examples. Having Xcode 6.3.1 requires Mac OS X Yosemite 10.10.
+
 ## Quick Start
 ### Installation
 
