@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		205E0DDBA83D33B3D2D3DEF0 /* libPods-ios-sdk-example-swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E7D400B8848DEC1CB05741 /* libPods-ios-sdk-example-swift.a */; };
 		97CE2A6A1AE02F34003EF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A611AE02F34003EF3AA /* AppDelegate.swift */; };
 		97CE2A6B1AE02F34003EF3AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A631AE02F34003EF3AA /* LaunchScreen.xib */; };
 		97CE2A6C1AE02F34003EF3AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A651AE02F34003EF3AA /* Main.storyboard */; };
 		97CE2A6D1AE02F34003EF3AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CE2A671AE02F34003EF3AA /* Images.xcassets */; };
 		97CE2A6E1AE02F34003EF3AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A691AE02F34003EF3AA /* ViewController.swift */; };
+		97D8CB151AF3DB5E00A68688 /* libPods-ios-sdk-example-swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D8CB141AF3DB5E00A68688 /* libPods-ios-sdk-example-swift.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +28,7 @@
 		97CE2A691AE02F34003EF3AA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
 		97D778FB1ADEB0B0005D7B4C /* ios-sdk-example-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D778FF1ADEB0B0005D7B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D8CB141AF3DB5E00A68688 /* libPods-ios-sdk-example-swift.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ios-sdk-example-swift.a"; path = "Pods/../build/Debug-iphoneos/libPods-ios-sdk-example-swift.a"; sourceTree = "<group>"; };
 		CE68F131A0180EC81343F3F7 /* Pods-ios-sdk-example-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk-example-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-sdk-example-swift/Pods-ios-sdk-example-swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205E0DDBA83D33B3D2D3DEF0 /* libPods-ios-sdk-example-swift.a in Frameworks */,
+				97D8CB151AF3DB5E00A68688 /* libPods-ios-sdk-example-swift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +47,7 @@
 		827CC5AC77C4E6A0A271F4D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				97D8CB141AF3DB5E00A68688 /* libPods-ios-sdk-example-swift.a */,
 				20E7D400B8848DEC1CB05741 /* libPods-ios-sdk-example-swift.a */,
 			);
 			name = Frameworks;
@@ -341,11 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/chrisk/source/ios-sdk",
-					"/Users/chrisk/source/ios-sdk/keyutils/libs",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "ios-sdk-example-swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Ios-sdk-example-Bridging-Header.h";
 			};
@@ -358,11 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/chrisk/source/ios-sdk",
-					"/Users/chrisk/source/ios-sdk/keyutils/libs",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "ios-sdk-example-swift";
 			};
 			name = Release;
