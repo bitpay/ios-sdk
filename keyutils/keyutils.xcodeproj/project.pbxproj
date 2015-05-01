@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97CE2A411AE029AE003EF3AA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A401AE029AE003EF3AA /* libcrypto.a */; };
+		97CE2A451AE029D2003EF3AA /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A441AE029D2003EF3AA /* openssl.framework */; };
+		97CE2A4A1AE02A23003EF3AA /* keyutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A491AE02A23003EF3AA /* keyutils.m */; };
+		97CE2A561AE02CF8003EF3AA /* keyutilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE2A551AE02CF8003EF3AA /* keyutilsTests.m */; };
+		97CE2A571AE02CF8003EF3AA /* libkeyutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE2A1E1AE028FF003EF3AA /* libkeyutils.a */; };
+		97CE2A741AE030D4003EF3AA /* keyutils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 97CE2A481AE02A23003EF3AA /* keyutils.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97CE2A581AE02CF8003EF3AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97CE2A161AE028FF003EF3AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97CE2A1D1AE028FF003EF3AA;
+			remoteInfo = keyutils;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		97CE2A1C1AE028FF003EF3AA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				97CE2A741AE030D4003EF3AA /* keyutils.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		97CE2A1E1AE028FF003EF3AA /* libkeyutils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libkeyutils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97CE2A401AE029AE003EF3AA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		97CE2A441AE029D2003EF3AA /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
+		97CE2A481AE02A23003EF3AA /* keyutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keyutils.h; sourceTree = "<group>"; };
+		97CE2A491AE02A23003EF3AA /* keyutils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyutils.m; sourceTree = "<group>"; };
+		97CE2A511AE02CF8003EF3AA /* keyutilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keyutilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97CE2A541AE02CF8003EF3AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97CE2A551AE02CF8003EF3AA /* keyutilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = keyutilsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97CE2A1B1AE028FF003EF3AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97CE2A411AE029AE003EF3AA /* libcrypto.a in Frameworks */,
+				97CE2A451AE029D2003EF3AA /* openssl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97CE2A4E1AE02CF8003EF3AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97CE2A571AE02CF8003EF3AA /* libkeyutils.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97CE2A151AE028FF003EF3AA = {
+			isa = PBXGroup;
+			children = (
+				97CE2A471AE02A23003EF3AA /* Classes */,
+				97CE2A521AE02CF8003EF3AA /* keyutilsTests */,
+				97CE2A431AE029D2003EF3AA /* Frameworks */,
+				97CE2A3F1AE029AE003EF3AA /* libs */,
+				97CE2A1F1AE028FF003EF3AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97CE2A1F1AE028FF003EF3AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A1E1AE028FF003EF3AA /* libkeyutils.a */,
+				97CE2A511AE02CF8003EF3AA /* keyutilsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97CE2A3F1AE029AE003EF3AA /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A401AE029AE003EF3AA /* libcrypto.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		97CE2A431AE029D2003EF3AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A441AE029D2003EF3AA /* openssl.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		97CE2A471AE02A23003EF3AA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A481AE02A23003EF3AA /* keyutils.h */,
+				97CE2A491AE02A23003EF3AA /* keyutils.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		97CE2A521AE02CF8003EF3AA /* keyutilsTests */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A551AE02CF8003EF3AA /* keyutilsTests.m */,
+				97CE2A531AE02CF8003EF3AA /* Supporting Files */,
+			);
+			path = keyutilsTests;
+			sourceTree = "<group>";
+		};
+		97CE2A531AE02CF8003EF3AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				97CE2A541AE02CF8003EF3AA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97CE2A1D1AE028FF003EF3AA /* keyutils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97CE2A321AE028FF003EF3AA /* Build configuration list for PBXNativeTarget "keyutils" */;
+			buildPhases = (
+				97CE2A1A1AE028FF003EF3AA /* Sources */,
+				97CE2A1B1AE028FF003EF3AA /* Frameworks */,
+				97CE2A1C1AE028FF003EF3AA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = keyutils;
+			productName = keyutils;
+			productReference = 97CE2A1E1AE028FF003EF3AA /* libkeyutils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		97CE2A501AE02CF8003EF3AA /* keyutilsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97CE2A5A1AE02CF8003EF3AA /* Build configuration list for PBXNativeTarget "keyutilsTests" */;
+			buildPhases = (
+				97CE2A4D1AE02CF8003EF3AA /* Sources */,
+				97CE2A4E1AE02CF8003EF3AA /* Frameworks */,
+				97CE2A4F1AE02CF8003EF3AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97CE2A591AE02CF8003EF3AA /* PBXTargetDependency */,
+			);
+			name = keyutilsTests;
+			productName = keyutilsTests;
+			productReference = 97CE2A511AE02CF8003EF3AA /* keyutilsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97CE2A161AE028FF003EF3AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = bitpay;
+				TargetAttributes = {
+					97CE2A1D1AE028FF003EF3AA = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					97CE2A501AE02CF8003EF3AA = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 97CE2A191AE028FF003EF3AA /* Build configuration list for PBXProject "keyutils" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 97CE2A151AE028FF003EF3AA;
+			productRefGroup = 97CE2A1F1AE028FF003EF3AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97CE2A1D1AE028FF003EF3AA /* keyutils */,
+				97CE2A501AE02CF8003EF3AA /* keyutilsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97CE2A4F1AE02CF8003EF3AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97CE2A1A1AE028FF003EF3AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97CE2A4A1AE02A23003EF3AA /* keyutils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97CE2A4D1AE02CF8003EF3AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97CE2A561AE02CF8003EF3AA /* keyutilsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97CE2A591AE02CF8003EF3AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97CE2A1D1AE028FF003EF3AA /* keyutils */;
+			targetProxy = 97CE2A581AE02CF8003EF3AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		97CE2A301AE028FF003EF3AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		97CE2A311AE028FF003EF3AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97CE2A331AE028FF003EF3AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		97CE2A341AE028FF003EF3AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		97CE2A5B1AE02CF8003EF3AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(SRCROOT)/ocmock",
+				);
+				INFOPLIST_FILE = keyutilsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		97CE2A5C1AE02CF8003EF3AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(SRCROOT)/ocmock",
+				);
+				INFOPLIST_FILE = keyutilsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97CE2A191AE028FF003EF3AA /* Build configuration list for PBXProject "keyutils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97CE2A301AE028FF003EF3AA /* Debug */,
+				97CE2A311AE028FF003EF3AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97CE2A321AE028FF003EF3AA /* Build configuration list for PBXNativeTarget "keyutils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97CE2A331AE028FF003EF3AA /* Debug */,
+				97CE2A341AE028FF003EF3AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97CE2A5A1AE02CF8003EF3AA /* Build configuration list for PBXNativeTarget "keyutilsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97CE2A5B1AE02CF8003EF3AA /* Debug */,
+				97CE2A5C1AE02CF8003EF3AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97CE2A161AE028FF003EF3AA /* Project object */;
+}
