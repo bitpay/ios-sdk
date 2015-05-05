@@ -5,12 +5,6 @@
       location = "group:Example/ios-example-objective-c/ios-sdk-example-objective-c.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:keyutils/keyutils.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Example/ios-example-swift/ios-sdk-example-swift.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:client/client.xcodeproj">
    </FileRef>
 </Workspace>

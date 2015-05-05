@@ -8,6 +8,7 @@ is free.
 
 You must have Xcode 6.3.1 or above to be able to take advantage of the Swift examples. Having Xcode 6.3.1 requires Mac OS X Yosemite 10.10.
 
+You must also start the individual example's workspace in order to build and run the example. An example of this would be to open ./Example/ios-example-objective-c/ios-sdk-example-objective-c.xcworkspace and -not- ios-sdk.workspace if you want to run the Objective-C example. Then run pod install inside the example's directory in order to gather the cocoapod dependencies. 
 ## Quick Start
 ### Installation
 
