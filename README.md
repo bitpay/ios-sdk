@@ -9,12 +9,9 @@ Powerful, flexible, lightweight interface to the BitPay Bitcoin Payment Gateway 
 
 API Documentation is available on the [BitPay site](https://bitpay.com/api).
 
-## Running the Tests
+## Important information
 
-Before running the behavior tests, you will need a test.bitpay.com account and you will need to set the local constants. 
-
-To run unit tests:
-> Open Xcode -> key commands are: Command + u 
+This repository is a convenience wrapper around all the other parts of BitPay's iOS SDK offerings. For instance, this repository holds references (git submodules) to bitpay-ios-keyutils and bitpay-ios-client. It also holds example apps in the "Example" directory. Please see the individual GitHub repos for more information about the parts of the SDK. This reposititory would be especially useful for those iOS developers that are opposed to using Cocoapods.
 
 ## Found a bug?
 Let us know! Send a pull request or a patch. Questions? Ask! We're here to help. We will respond to all filed issues.
