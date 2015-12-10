@@ -132,6 +132,7 @@
 				E48416301AD8A02B000DC153 /* Frameworks */,
 				E48416311AD8A02B000DC153 /* Resources */,
 				F14A152C364077D375E0F0DA /* Copy Pods Resources */,
+				8B09237EDBEAD9548D50C6A3 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,7 +149,7 @@
 		E484162B1AD8A02B000DC153 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Christopher Kleeschulte";
 				TargetAttributes = {
 					E48416321AD8A02B000DC153 = {
@@ -188,6 +189,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8B09237EDBEAD9548D50C6A3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-sdk-example-objective-c/Pods-ios-sdk-example-objective-c-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B1C919837956D155338F029B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,6 +289,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -349,6 +366,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitpay.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "ios-sdk-example-ios";
 			};
 			name = Debug;
@@ -365,6 +383,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitpay.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "ios-sdk-example-ios";
 			};
 			name = Release;
