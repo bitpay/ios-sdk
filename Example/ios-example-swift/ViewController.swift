@@ -21,7 +21,7 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
     var sin = ""
     var token = ""
     var invoice = ""
-    var data = NSMutableData.new()
+    var data = NSMutableData()
     
     @IBAction func generateKey(sender: AnyObject) {
         pem = BPKeyUtils.generatePem()
@@ -36,7 +36,8 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
     
     @IBAction func getToken(sender: AnyObject) {
         
-        if(pairingText.text.isEmpty) {
+        let pairingCode = pairingText.text as String!
+        if(pairingCode.isEmpty) {
             tokenText.text = "Please get a pairing code from test.bitpay.com"
             return
         }
@@ -49,20 +50,15 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
         
         bp.host = "https://test.bitpay.com"
         
-        var apiError: NSError?
-        var pairingCode = pairingText.text as String
-        let token = bp.authorizeClient(pairingCode, error: &apiError)
-        
-        if token == nil {
-            if let error = apiError {
-                NSLog("api error")
-                tokenText.text = "api error"
-            }
-        } else {
+        do {
+            let token = try bp.authorizeClient(pairingCode)
             self.token = token
             tokenText.text = token
+
+        } catch _ {
+            NSLog("api error")
+            tokenText.text = "api error"
         }
-    
     }
     
     
@@ -75,21 +71,21 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
         
         data.setData(NSData())
         
-        var url = NSURL(string: "https://test.bitpay.com/invoices")
-        var request = NSMutableURLRequest(URL: url!)
+        let url = NSURL(string: "https://test.bitpay.com/invoices")
+        let request = NSMutableURLRequest(URL: url!)
 
         
-        var pubkey = BPKeyUtils.getPublicKeyFromPem(pem)
+        let pubkey = BPKeyUtils.getPublicKeyFromPem(pem)
         NSLog("public key: \(pubkey)")
         NSLog("private key: \(BPKeyUtils.getPrivateKeyFromPem(pem))")
         
-        var postString = "{\"currency\":\"USD\",\"price\":20,\"token\":\"\(token)\"}"
+        let postString = "{\"currency\":\"USD\",\"price\":20,\"token\":\"\(token)\"}"
         
-        var message = "https://test.bitpay.com/invoices\(postString)"
+        let message = "https://test.bitpay.com/invoices\(postString)"
         
-        var signedMessage = BPKeyUtils.sign(message, withPem: pem)
+        let signedMessage = BPKeyUtils.sign(message, withPem: pem)
 
-        var bodyData = (postString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        let bodyData = (postString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         
         request.HTTPBody = bodyData
         request.addValue("2.0.0", forHTTPHeaderField: "x-accept-version")
@@ -98,7 +94,7 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
         request.addValue(signedMessage, forHTTPHeaderField: "x-signature")
         request.HTTPMethod = "POST"
         
-        var connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
+        let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
         connection?.start()
         
     }
@@ -113,9 +109,15 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         self.pairingText.delegate = self
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -131,14 +133,19 @@ class ViewController: UIViewController,  NSURLConnectionDelegate, UITextFieldDel
     func connectionDidFinishLoading(connection: NSURLConnection!) {
 
         var jsonError: NSError?
-        var errorInParsing = "there was an error parsing"
+        let errorInParsing = "there was an error parsing"
         
-        let obj: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
-            options: NSJSONReadingOptions.AllowFragments,
-            error: &jsonError)
+        let obj: AnyObject?
+        do {
+            obj = try NSJSONSerialization.JSONObjectWithData(data,
+                        options: NSJSONReadingOptions.AllowFragments)
+        } catch let error as NSError {
+            jsonError = error
+            obj = nil
+        }
 
-        var dta = NSString(data: data, encoding: NSUTF8StringEncoding)
-        println("response from server is: \(dta)")
+        let dta = NSString(data: data, encoding: NSUTF8StringEncoding)
+        print("response from server is: \(dta)")
         
         if(jsonError != nil) {
             NSLog(errorInParsing)

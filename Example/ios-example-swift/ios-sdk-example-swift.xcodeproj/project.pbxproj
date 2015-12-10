@@ -132,6 +132,7 @@
 				97D778F81ADEB0B0005D7B4C /* Frameworks */,
 				97D778F91ADEB0B0005D7B4C /* Resources */,
 				FCFDE37D46C6257E429D491C /* Copy Pods Resources */,
+				998756ED6C54C4C020FE2937 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,7 +149,9 @@
 		97D778F31ADEB0B0005D7B4C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = bitpay;
 				TargetAttributes = {
 					97D778FA1ADEB0B0005D7B4C = {
@@ -201,6 +204,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		998756ED6C54C4C020FE2937 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-sdk-example-swift/Pods-ios-sdk-example-swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCFDE37D46C6257E429D491C /* Copy Pods Resources */ = {
@@ -273,6 +291,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -344,6 +363,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitpay.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "ios-sdk-example-swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Ios-sdk-example-Bridging-Header.h";
 			};
@@ -357,6 +377,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitpay.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "ios-sdk-example-swift";
 			};
 			name = Release;
