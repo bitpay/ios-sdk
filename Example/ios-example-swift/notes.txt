@@ -1,0 +1,4 @@
+add an example showing/demostrating:
+
+1. how to create an invoice and pay with your bitcoin wallet.
+
