@@ -11,7 +11,7 @@ API Documentation is available on the [BitPay site](https://bitpay.com/api).
 
 ## Important information
 
-This repository is a convenience wrapper around all the other parts of BitPay's iOS SDK offerings. For instance, this repository holds references (git submodules) to bitpay-ios-keyutils and bitpay-ios-client. It also holds example apps in the "Example" directory. Please see the individual GitHub repos for more information about the parts of the SDK. This reposititory would be especially useful for those iOS developers that are opposed to using Cocoapods.
+This repository is a convenience wrapper around all the other parts of BitPay's iOS SDK offerings. For instance, this repository holds references (git submodules) to bitpay-ios-keyutils and bitpay-ios-client. It also holds example apps in the "Example" directory. Please see the individual GitHub repos for more information about the parts of the SDK. This reposititory would be especially useful for those iOS developers that are opposed to using CocoaPods.
 
 ## Found a bug?
 Let us know! Send a pull request or a patch. Questions? Ask! We're here to help. We will respond to all filed issues.
