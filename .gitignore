@@ -3,4 +3,6 @@
 src
 build
 **/xcuserdata
-**/xcshareddata
+**/Pods
+**/Podfile.lock
+**/clientTests/constants.h

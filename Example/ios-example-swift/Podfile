@@ -1,0 +1,3 @@
+target 'ios-sdk-example-swift' do
+  pod 'bitpay-ios-client'
+end

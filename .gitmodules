@@ -1,0 +1,6 @@
+[submodule "bitpay-ios-client"]
+	path = bitpay-ios-client
+	url = git@github.com:bitpay/bitpay-ios-client.git
+[submodule "bitpay-ios-keyutils"]
+	path = bitpay-ios-keyutils
+	url = git@github.com:bitpay/bitpay-ios-keyutils.git

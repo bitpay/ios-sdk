@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>083F21BB-5252-40BE-8A1C-6A88BC1D4678</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ios-sdk</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>22177D1327869C4919CA54690302F08BAE4542CA</key>
+		<string>github.com:luisobo/Nocilla.git</string>
+		<key>897EF4E549C6630BA3624196A05FC652861D12AA</key>
+		<string>github.com:kleetus/ios-sdk.git</string>
+		<key>AAD89F837BF860319F97F1158EE05886D4FDC1A3</key>
+		<string>github.com:kleetus/bitpay-ios-client.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios-sdk.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>22177D1327869C4919CA54690302F08BAE4542CA</key>
+		<string>../../Nocilla</string>
+		<key>897EF4E549C6630BA3624196A05FC652861D12AA</key>
+		<string>..</string>
+		<key>AAD89F837BF860319F97F1158EE05886D4FDC1A3</key>
+		<string>../client</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:kleetus/ios-sdk.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>897EF4E549C6630BA3624196A05FC652861D12AA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AAD89F837BF860319F97F1158EE05886D4FDC1A3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>client</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>897EF4E549C6630BA3624196A05FC652861D12AA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios-sdk</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>22177D1327869C4919CA54690302F08BAE4542CA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nocilla</string>
+		</dict>
+	</array>
+</dict>
+</plist>
